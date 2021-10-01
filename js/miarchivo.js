@@ -79,18 +79,18 @@
         }
           
         
-        /* habitacion.sort((a, b) =>{
-            const tipoA = a.apellido.tolowerCase();
-            const tipoB = b.apellido.tolowerCase();
-            if(apellidoA < apellidoB){
+        habitaciones.sort((a, b) =>{
+            const tipoA = a.tipo;
+            const tipoB = b.tipo;
+            if(tipoA < tipoB){
                 return -1;
             }
-            if(apellidoA > apellidoB){
-                    return 1;
+            if(tipoA > tipoB){
+                return 1;
             }
             return 0;
         });
-        console.log(habitacion) */
+        
         
                 
         //facturacion
