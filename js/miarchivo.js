@@ -11,7 +11,8 @@
         let saludo = alert("Hola " + cliente);
         
                 //Conteo de personas
-        let numPersonas= prompt("Ingrese Numero de personas");
+        //let numPersonas= prompt("Ingrese Numero de personas");
+        let numPersonas = 0;
                 //Facturacion
         let interesTarjetaCuota = 0.0;
         let precioProducto = 0.0;
@@ -71,7 +72,7 @@
                 }
             }
             if(habAsignadaSi ==true ){
-                alert("habitacion " + habitacionAsignada.tipo + "a un valor de " + habitacionAsignada.precio);                    
+                alert("habitacion " + habitacionAsignada.tipo + " a un valor de " + habitacionAsignada.precio);                    
 
             } else {
                 alert( "No existe una habitacion con las caracteristicas requeridas");
@@ -131,6 +132,11 @@
                 alert( "el precio final es " + (numPersonas * conInteresTarjetaCuota)); 
         } 
         
+
+        let search = () => {
+        let opcion = document.getElementById("cantPersonas");
+        numPersonas = opcion.options[opcion.selectedIndex].text;
+        alert(numPersonas)
         //EJECUCION DE FUNCIONES
         asignarHabitacion();
         agregarIva();
@@ -139,3 +145,12 @@
         calculaInteresTarjetaCuota();
         precioFinalUnitario();
         precioFinal();
+        }
+
+
+
+        /* let cantPersonasDom = document.getElementById("cantPersonas");
+        let b = document.createElement("option");
+        b.innerHTML = numPersonas;
+        cantPersonas.append(b); */
+

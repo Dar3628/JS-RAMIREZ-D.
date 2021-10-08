@@ -207,6 +207,15 @@ mark, .mark {
   background-color: #fcf8e3;
 }
 
+.search-form{
+  display: block;
+  background-color: rgb(200, 200, 226);
+
+
+  border-color: rgb(51, 51, 163);
+  height: 5rem;
+}
+
 sub,
 sup {
   position: relative;
