@@ -52,12 +52,12 @@
                 habAsignadaSi = true;
                 }
             }
-            if(habAsignadaSi ==true ){
-                alert("habitacion " + habitacionAsignada.tipo + " a un valor de " + habitacionAsignada.precio);                    
+            // if(habAsignadaSi ==true ){
+            //     //alert("habitacion " + habitacionAsignada.tipo + " a un valor de " + habitacionAsignada.precio);                    
 
-            } else {
-                alert( "No existe una habitacion con las caracteristicas requeridas");
-            }
+            // } else {
+            //     alert( "No existe una habitacion con las caracteristicas requeridas");
+            // }
         }
           
         
@@ -100,17 +100,24 @@
 
 
         const calculaInteresTarjetaCuota = () => {
-                return (
-                    conInteresTarjetaCuota = conIva * interesTarjetaCuota);
-            }
-        
-        const precioFinalUnitario = () => {
-              alert("el precio final por persona es " + conInteresTarjetaCuota);
+            return (conInteresTarjetaCuota = conIva * interesTarjetaCuota);
         }
-        
-        const precioFinal = () => {
-                alert( "el precio final es " + (numPersonas * conInteresTarjetaCuota)); 
-        } 
+
+        let searchBtn = document.getElementById("book");
+
+          searchBtn.addEventListener("click", e = () =>{
+                let input = document.createElement("div");
+                input.setAttribute("class", "justify-content-center align-content-center");
+                input.textContent="el precio final por persona es de $ " + conInteresTarjetaCuota;
+                document.getElementById("boxInicial").appendChild(input);
+            })               
+            
+            searchBtn.addEventListener("click", e = () =>{
+                let input = document.createElement("div");
+                input.setAttribute("class", "justify-content-center align-content-center");
+                input.textContent ="el precio final es de $  " + (numPersonas * conInteresTarjetaCuota);
+                document.getElementById("boxInicial").appendChild(input);
+            }) 
         
         let mostrarDivCuotas = () => {
             if(document.getElementById("tarjetaCredito").checked){
@@ -137,8 +144,10 @@
         //tipoPago();
         cuantoInteres(); 
         calculaInteresTarjetaCuota();
-        precioFinalUnitario();
-        precioFinal();
+        //precioFinalUnitario();
+        //precioFinal();
+        
+
         }
 
         
