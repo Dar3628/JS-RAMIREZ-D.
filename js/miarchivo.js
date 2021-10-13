@@ -5,10 +5,17 @@
                 //Conteo de personas
         let numPersonas = 0;
                 //Facturacion
+<<<<<<< HEAD
+        let interesTarjetaCuota = 1;
+        let precioProducto = 0.0;
+        const iva = 1.21;
+        let numCuotas = 0;
+=======
         let interesTarjetaCuota = 0.0;
         let precioProducto = 0.0;
         const iva = 1.21;
         let numCuotas = 1;
+>>>>>>> main
         let conIva = 0.0;
         let conInteresTarjetaCuota = 0.0;
         
@@ -61,6 +68,9 @@
         }
           
         
+<<<<<<< HEAD
+    
+=======
         // habitaciones.sort((a, b) =>{
         //     const tipoA = a.tipo;
         //     const tipoB = b.tipo;
@@ -79,10 +89,31 @@
         // }
                 
         //facturacion
+>>>>>>> main
         
         
         
         const cuantoInteres = () => {
+<<<<<<< HEAD
+            switch(true){
+                case numCuotas == "1":
+                   interesTarjetaCuota = 1;
+                   break;
+        
+                   case numCuotas == "3":
+                    interesTarjetaCuota = 1.10;
+                    break;
+                
+                    case numCuotas == "6":
+                    interesTarjetaCuota = 1.15;
+                    break;
+                
+                    case numCuotas == "9":
+                    interesTarjetaCuota = 1.15;
+                    break;
+
+                    case numCuotas == "12":
+=======
             switch(Number){
                 case cantCuotas == 1:
                    interesTarjetaCuota = 1;
@@ -101,6 +132,7 @@
                     break;
 
                     case cantCuotas == 12:
+>>>>>>> main
                     interesTarjetaCuota = 1.15;
                     break;
                        
@@ -109,6 +141,19 @@
                     break;  
             }
         }
+<<<<<<< HEAD
+        // const cantCuotas = () => {
+        //     document.getElementById = ("cantCuotas");
+        //     cantCuotas = numCuotas;
+        // }
+        
+
+
+        const calculaInteresTarjetaCuota = () => {
+                return (
+                    conInteresTarjetaCuota = conIva * interesTarjetaCuota);
+            }
+=======
         const cantCuotas = () => {
             document.getElementById = ("cantCuotas");
         //     cantCuotas = numCuotas;
@@ -117,6 +162,7 @@
 
         const calculaInteresTarjetaCuota = () => (
             conInteresTarjetaCuota = conIva * interesTarjetaCuota);
+>>>>>>> main
         
         const precioFinalUnitario = () => {
               alert("el precio final por persona es " + conInteresTarjetaCuota);
@@ -126,26 +172,64 @@
                 alert( "el precio final es " + (numPersonas * conInteresTarjetaCuota)); 
         } 
         
+<<<<<<< HEAD
+        const efectivo = document.getElementById("efectivo");
+        const tarjetaCredito = document.getElementById("tarjetaCredito");
+        const tarjetaDebito = document.getElementById("tarjetaDebito");
+        let formaDePago = () =>{
+            switch(true){
+                case efectivo : efectivo.addEventListener("click", e=() => {
+                    document.getElementById("divCuotas").style.display = "none"});
+                    break;
+               
+                case tarjetaDebito: tarjetaDebito.addEventListener ("click", e=() => {
+                    document.getElementById("divCuotas").style.display = "none"});
+                    break;
+                case tarjetaCredito : tarjetaCredito.addEventListener ("click", e=() => {
+                    document.getElementById("divCuotas").style.display = "block"});
+                    break;
 
+            }
+            
+        }
+        
+=======
+
+>>>>>>> main
         let search = () => {
         let opcion = document.getElementById("cantPersonas");
         numPersonas = opcion.options[opcion.selectedIndex].text;
         let option2 = document.getElementById("cantCuotas");
+<<<<<<< HEAD
+        numCuotas = option2.options[option2.selectedIndex].text;
+        //alert(numPersonas)
+=======
         numCuotas = option2.options[parseInt(option2.selectedIndex)];
         // alert(numPersonas)
+>>>>>>> main
         //EJECUCION DE FUNCIONES
         asignarHabitacion();
         agregarIva();
         //console.log(precioProducto);
+<<<<<<< HEAD
+        tipoPago();
+=======
         cantCuotas();
+>>>>>>> main
         cuantoInteres(); 
         calculaInteresTarjetaCuota();
         precioFinalUnitario();
         precioFinal();
         }
 
+<<<<<<< HEAD
+        
+
+         
+=======
 
 
+>>>>>>> main
         /* let cantPersonasDom = document.getElementById("cantPersonas");
         let b = document.createElement("option");
         b.innerHTML = numPersonas;
