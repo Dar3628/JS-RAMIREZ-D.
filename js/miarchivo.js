@@ -112,26 +112,25 @@
                 alert( "el precio final es " + (numPersonas * conInteresTarjetaCuota)); 
         } 
         
-        const efectivo = document.getElementById("efectivo");
-        const tarjetaCredito = document.getElementById("tarjetaCredito");
-        const tarjetaDebito = document.getElementById("tarjetaDebito");
-        let formaDePago = () =>{
-            switch(true){
-                case efectivo : efectivo.addEventListener("click", e=() => {
-                    document.getElementById("divCuotas").style.display = "none"});
-                    break;
-               
-                case tarjetaDebito: tarjetaDebito.addEventListener ("click", e=() => {
-                    document.getElementById("divCuotas").style.display = "none"});
-                    break;
-                case tarjetaCredito : tarjetaCredito.addEventListener ("click", e=() => {
-                    document.getElementById("divCuotas").style.display = "block"});
-                    break;
-
+        let mostrarDivCuotas = () => {
+            if(document.getElementById("tarjetaCredito").checked){
+            document.getElementById("divCuotas").style.display = "block";
+            }else{
+                document.getElementById("divCuotas").style.display = "none";
             }
-            
+
         }
+        const tarjetaCredito = document.getElementById("tipoPago");
+        tarjetaCredito.addEventListener ("click", mostrarDivCuotas);
+
+        // function addElemento("prueba"){
+        //     var textoReutilizable = document.getElementById("textoReutilizable");
+        //     var h3 = document.createElement ("h3")
+        //     h3.innerHTML = prueba;
+        //     textoReutilizable.appendChild("h3");
+        // }
         
+            
         let search = () => {
         let opcion = document.getElementById("cantPersonas");
         numPersonas = opcion.options[opcion.selectedIndex].text;
@@ -142,7 +141,7 @@
         asignarHabitacion();
         agregarIva();
         //console.log(precioProducto);
-        tipoPago();
+        //tipoPago();
         cuantoInteres(); 
         calculaInteresTarjetaCuota();
         precioFinalUnitario();
