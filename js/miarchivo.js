@@ -115,7 +115,6 @@
 
             searchBtn.addEventListener("click", e = () =>{
                 document.getElementById("resultados").style.display = "block";
-                document.getElementById("resultados").style.fontsize ="40rem"
 
             }) 
 
