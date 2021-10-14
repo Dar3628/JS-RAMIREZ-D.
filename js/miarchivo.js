@@ -52,12 +52,7 @@
                 habAsignadaSi = true;
                 }
             }
-            // if(habAsignadaSi ==true ){
-            //     //alert("habitacion " + habitacionAsignada.tipo + " a un valor de " + habitacionAsignada.precio);                    
-
-            // } else {
-            //     alert( "No existe una habitacion con las caracteristicas requeridas");
-            // }
+            
         }
           
         
@@ -92,10 +87,7 @@
                     break;  
             }
         }
-        // const cantCuotas = () => {
-        //     document.getElementById = ("cantCuotas");
-        //     cantCuotas = numCuotas;
-        // }
+       
         
 
 
@@ -106,27 +98,37 @@
         let searchBtn = document.getElementById("book");
 
           searchBtn.addEventListener("click", e = () =>{
-                let input = document.createElement("div");
+                let input = document.createElement("p");
+                document.getElementById("unitario").textContent = "";
                 input.setAttribute("class", "justify-content-center align-content-center");
-                input.textContent="el precio final por persona es de $ " + conInteresTarjetaCuota;
-                document.getElementById("boxInicial").appendChild(input);
+                input.textContent="El precio final por persona es de $ " + conInteresTarjetaCuota;
+                document.getElementById("unitario").appendChild(input);
             })               
-            
+                        
             searchBtn.addEventListener("click", e = () =>{
-                let input = document.createElement("div");
+                let input = document.createElement("p");
+                document.getElementById("total").textContent = "";
                 input.setAttribute("class", "justify-content-center align-content-center");
-                input.textContent ="el precio final es de $  " + (numPersonas * conInteresTarjetaCuota);
-                document.getElementById("boxInicial").appendChild(input);
+                input.textContent ="El precio final es de $  " + (numPersonas * conInteresTarjetaCuota);
+                document.getElementById("total").appendChild(input);
             }) 
-        
+
+            searchBtn.addEventListener("click", e = () =>{
+                document.getElementById("resultados").style.display = "block";
+                document.getElementById("resultados").style.fontsize ="40rem"
+
+            }) 
+
         let mostrarDivCuotas = () => {
             if(document.getElementById("tarjetaCredito").checked){
             document.getElementById("divCuotas").style.display = "block";
             }else{
                 document.getElementById("divCuotas").style.display = "none";
-            }
-
+                document.getElementById("cantCuotas").opcion = opcion[0];
+            }        
         }
+
+
         const tarjetaCredito = document.getElementById("tipoPago");
         tarjetaCredito.addEventListener ("click", mostrarDivCuotas);
         
@@ -136,25 +138,14 @@
         numPersonas = opcion.options[opcion.selectedIndex].text;
         let option2 = document.getElementById("cantCuotas");
         numCuotas = option2.options[option2.selectedIndex].text;
-        //alert(numPersonas)
         //EJECUCION DE FUNCIONES
         asignarHabitacion();
-        agregarIva();
-        //console.log(precioProducto);
-        //tipoPago();
+        agregarIva();        
         cuantoInteres(); 
-        calculaInteresTarjetaCuota();
-        //precioFinalUnitario();
-        //precioFinal();
-        
+        calculaInteresTarjetaCuota();       
 
         }
 
         
 
-         
-        /* let cantPersonasDom = document.getElementById("cantPersonas");
-        let b = document.createElement("option");
-        b.innerHTML = numPersonas;
-        cantPersonas.append(b); */
-
+        
