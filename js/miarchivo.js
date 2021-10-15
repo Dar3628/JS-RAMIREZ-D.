@@ -1,7 +1,7 @@
 
         //Saludo e inicio
-        let cliente = prompt("Ingresa tu nombre");
-        let saludo = alert("Hola " + cliente);
+        // let cliente = prompt("Ingresa tu nombre");
+        // let saludo = alert("Hola " + cliente);
                 //Conteo de personas
         let numPersonas = 0;
                 //Facturacion
@@ -101,7 +101,7 @@
                 let input = document.createElement("p");
                 document.getElementById("unitario").textContent = "";
                 input.setAttribute("class", "justify-content-center align-content-center");
-                input.textContent="El precio final por persona es de $ " + conInteresTarjetaCuota;
+                input.textContent="El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota);
                 document.getElementById("unitario").appendChild(input);
             })               
                         
@@ -109,7 +109,7 @@
                 let input = document.createElement("p");
                 document.getElementById("total").textContent = "";
                 input.setAttribute("class", "justify-content-center align-content-center");
-                input.textContent ="El precio final es de $  " + (numPersonas * conInteresTarjetaCuota);
+                input.textContent ="El precio final es de $  " + Math.trunc(numPersonas * conInteresTarjetaCuota);
                 document.getElementById("total").appendChild(input);
             }) 
 
@@ -122,10 +122,17 @@
             if(document.getElementById("tarjetaCredito").checked){
             document.getElementById("divCuotas").style.display = "block";
             }else{
+                if(document.getElementById("efectivo").checked || document.getElementById("tarjetaDebito").checked ){
                 document.getElementById("divCuotas").style.display = "none";
-                document.getElementById("cantCuotas").opcion = opcion[0];
+                document.getElementById("cantCuotas").value = 1;
+                }
             }        
         }
+              
+
+
+
+
 
 
         const tarjetaCredito = document.getElementById("tipoPago");
