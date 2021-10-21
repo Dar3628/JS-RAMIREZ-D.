@@ -126,24 +126,31 @@
         // }) 
 
         $("#book").click(function(){
-            $(".resultados").css("diplay", "block");
-            //$("    ").slidedown();
+            $("#resultados").show();
         })
+        //$("    ").slidedown();
         // searchBtn.addEventListener("click", e = () =>{
         //     document.getElementById("resultados").style.display = "block";
 
         // }) 
+        $("#tarjetaCredito").checked(function() {
+                $("#divCuotas").show();
+        })
+        
 
-        let mostrarDivCuotas = () => {
-            if(document.getElementById("tarjetaCredito").checked){
-            document.getElementById("divCuotas").style.display = "block";
-            }else{
-                if(document.getElementById("efectivo").checked || document.getElementById("tarjetaDebito").checked ){
-                document.getElementById("divCuotas").style.display = "none";
-                document.getElementById("cantCuotas").value = 1;
-                }
-            }        
-        }
+        // $("#tarjetaDebito") || $("#efectivo").checked(function(){
+        //     $("#divCuotas").hide();
+        // })
+        // let mostrarDivCuotas = () => {
+        //     if(document.getElementById("tarjetaCredito").checked){
+        //     document.getElementById("divCuotas").style.display = "block";
+        //     }else{
+        //         if(document.getElementById("efectivo").checked || document.getElementById("tarjetaDebito").checked ){
+        //         document.getElementById("divCuotas").style.display = "none";
+        //         document.getElementById("cantCuotas").value = 1;
+        //         }
+        //     }        
+        // }
               
 
 
