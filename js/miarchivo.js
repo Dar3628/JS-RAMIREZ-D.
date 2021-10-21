@@ -97,26 +97,42 @@
 
         let searchBtn = document.getElementById("book");
 
-          searchBtn.addEventListener("click", e = () =>{
-                let input = document.createElement("p");
-                document.getElementById("unitario").textContent = "";
-                input.setAttribute("class", "justify-content-center align-content-center");
-                input.textContent="El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota);
-                document.getElementById("unitario").appendChild(input);
-            })               
-                        
-            searchBtn.addEventListener("click", e = () =>{
-                let input = document.createElement("p");
-                document.getElementById("total").textContent = "";
-                input.setAttribute("class", "justify-content-center align-content-center");
-                input.textContent ="El precio final es de $  " + Math.trunc(numPersonas * conInteresTarjetaCuota);
-                document.getElementById("total").appendChild(input);
-            }) 
+        $("#book").click(function(){
+            $("#unitario").empty();
+            $("#unitario").append("El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota));
+        })
+        // searchBtn.addEventListener("click", e = () =>{
+        //     let input = document.createElement("p");
+        //     document.getElementById("unitario").textContent = "";
+        //     input.setAttribute("class", "justify-content-center align-content-center");
+        //     input.textContent="El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota);
+        //     document.getElementById("unitario").appendChild(input);
+        // }) 
 
-            searchBtn.addEventListener("click", e = () =>{
-                document.getElementById("resultados").style.display = "block";
+        $("#book").click(function(){
+            $("#total").empty();
+            $("#total").append("El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota));
+            //$("    ").slidedown();
+        })
+        
 
-            }) 
+                    
+        // searchBtn.addEventListener("click", e = () =>{
+        //     let input = document.createElement("p");
+        //     document.getElementById("total").textContent = "";
+        //     input.setAttribute("class", "justify-content-center align-content-center");
+        //     input.textContent ="El precio final es de $  " + Math.trunc(numPersonas * conInteresTarjetaCuota);
+        //     document.getElementById("total").appendChild(input);
+        // }) 
+
+        $("#book").click(function(){
+            $(".resultados").css("diplay", "block");
+            //$("    ").slidedown();
+        })
+        // searchBtn.addEventListener("click", e = () =>{
+        //     document.getElementById("resultados").style.display = "block";
+
+        // }) 
 
         let mostrarDivCuotas = () => {
             if(document.getElementById("tarjetaCredito").checked){
