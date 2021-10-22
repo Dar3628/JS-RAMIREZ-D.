@@ -133,8 +133,15 @@
         //     document.getElementById("resultados").style.display = "block";
 
         // }) 
-        $("#tarjetaCredito").checked(function() {
+        $("#tarjetaCredito").click(function() {
+             if($("#tarjetaCredito").is(":checked")){
                 $("#divCuotas").show();
+             } else{
+                if($("#tarjetaDebito || #efectivo").is(":checked")){
+                    $("#divCuotas").hide();
+                    $("#cantCuotas").val("1");
+                }
+             }
         })
         
 
@@ -155,11 +162,12 @@
 
 
 
-
-
-
+        
+        
         const tarjetaCredito = document.getElementById("tipoPago");
-        tarjetaCredito.addEventListener ("click", mostrarDivCuotas);
+        $("#tarjetaCredito").click(function(){
+            $("#divCuotas").show();
+        })
         
             
         let search = () => {
