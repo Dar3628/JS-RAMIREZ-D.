@@ -5059,11 +5059,11 @@ textarea.form-control-lg {
 
 .list-group-numbered {
   list-style-type: none;
-  counter-reset: section;
+  counter-reset: div;
 }
 .list-group-numbered > li::before {
-  content: counters(section, ".") ". ";
-  counter-increment: section;
+  content: counters(div, ".") ". ";
+  counter-increment: div;
 }
 
 .list-group-item-action {
@@ -11289,10 +11289,10 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("https://www.preferente.com/wp-content/uploads/2021/04/hotel-1280x720-768x432.jpg") no-repeat center center;
+  background: url("https://digital.ihg.com/is/image/ihg/intercontinental-tegucigalpa-6071105521-2x1?wid=1440&fit=fit,1") no-repeat center center;
   background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 header.masthead:before {
   content: "";
@@ -11302,7 +11302,7 @@ header.masthead:before {
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 header.masthead h1, header.masthead .h1 {
   font-size: 2rem;
@@ -11345,7 +11345,7 @@ header.masthead h1, header.masthead .h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("https://www.preferente.com/wp-content/uploads/2021/04/hotel-1280x720-768x432.jpg") no-repeat center center;
+  background: url("https://digital.ihg.com/is/image/ihg/intercontinental-tegucigalpa-6071105521-2x1?wid=1440&fit=fit,1") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -11373,4 +11373,7 @@ footer.footer {
   background-color: rgb(150, 185, 230);
   font-size: 1rem;
   margin-top: -2.5rem;
+}
+.transicion{
+  transition: all;
 }

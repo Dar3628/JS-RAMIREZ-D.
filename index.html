@@ -17,14 +17,15 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
+        <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">welcome Guys</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                <a class="navbar-brand" href="#!">Bienvenidos</a>
+                <a id="btn-simulador" class="btn btn-primary" href="#encabezado">Simular costos de habitacion por día</a>
+                <a class="btn btn-primary" href="#signup">Deseo que me contacten</a>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        <header id="encabezado" class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
@@ -47,97 +48,99 @@
             </div>
         </header>
         <!--buscador-->
-        <section class="search-form">
-            <div class="container bg-form col-xl-12 col-sm-12"> 
-                <form class="row d-flex justify-content-center align-content-center">         
-                    <div class=" col-xl-4 col-sm-6">                                
-                        <label for="check-in">Check-in</label>
-                        <input class="form-control form-control-sm" type="date" name="check-in" id="check-in">   
-                    </div>                        
-                    <div class=" col-xl-4 col-sm-6">                                
-                        <label for="check-out">Check-out</label>
-                        <input class="form-control form-control-sm" type="date" name="check-out" id="check-out"> 
-                    </div>
-                </form>
-            </div>
-        </section>
-        <section class="search-form">
-            <div class="container bg-form col-xl-12 col-sm-12"> 
-                <form class="row d-flex justify-content-center align-content-center">
-                    <div  class=" justify-content-center align-content-center col-xl-4 col-sm-6">                                
-                        <p>Medio de pago:</p>
-                    </div>         
-                    <div id="tipoPago" class="justify-content-center align-content-center col-xl-4 col-sm-6">
-                        <form name=testform>
-                            <input id="efectivo" name="Medio de pago" value=efectivo type=radio>Efectivo
-                            <input id="tarjetaDebito" name="Medio de pago" value=debito type=radio>Tarjeta de debito
-                            <input id="tarjetaCredito" name="Medio de pago" value=tarjeta type=radio>Tarjeta de credito
-                            </form>                                
-                    </div>                      
-                   
-                </form>
-            </div>
-        </section>
-        <section  class="search-form">
-            <div id="boxInicial" class="container bg-form col-xl-12 col-sm-12"> 
-                <form class="row d-flex justify-content-center align-content-center">         
-                    
-                    <div  class="form-row form-group flex-column align-items-center align-self-center col-xl-3 col-sm-6">                                
-                        <label>Cantidad de personas</label>
-                        <select id="cantPersonas" name="personas"  class="form-control-sm" required=""><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-                    </div>
-
-                    <div  id="divCuotas" class=" col-xl-4 col-sm-6 dispNone">                                
-                        <label>Cantidad de cuotas</label>
-                        <select id="cantCuotas" class="form-control-sm" required=""><option>1 cuota (sin interes)</option><option>3 cuotas (10% de interes)</option><option>6 cuotas (15% de interes)</option><option>9 cuotas (20% de interes)</option><option>12 cuotas (25% de interes)</option></select>
-                    </div>
-                    
-                    <div class="align-self-center col-xl-1 col-sm-6">
-                        <a href="#"><button onclick="search()" id="book" type="button" class="btn btn-success btn-sm">Search</button></a>
-                    </div>
-                </form>
-            </div>
-        </section>
-        <section id="resultados" class="search-form dispNone">
-            <div class="container bg-form col-xl-12 col-sm-12"> 
-                <form class="row d-flex justify-content-center align-content-center">         
-                    <div class=" col-xl-4 col-sm-6">                                
-                        <label></label>
-                        <div class="form-control form-control-sm colorResultado"  id="unitario"> </div>
-                    </div>                        
-                    <div class=" col-xl-4 col-sm-6">                                
-                        <label for="check-out"></label>
-                        <div class="form-control form-control-sm colorResultado"  id="total">  </div> 
-                    </div>
-                </form>
-            </div>
-        </section>
-
-
-        <!-- Icons Grid-->
-        
-        <!-- Image Showcases-->
-        <section class="showcase">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://cadenaser00.epimg.net/ser/imagenes/2017/07/21/sociedad/1500650308_386531_1500650567_noticia_normal.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Disfruta de la vida sabiendo que tus cosas estan seguras donde las dejaste...</h2>
-                        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error culpa molestias maiores nostrum consequuntur voluptatibus deserunt illo mollitia eius vitae odio veritatis consequatur asperiores maxime, quod deleniti neque. Soluta.</p>
-                    </div>
+        <section id="simulador" class="dispNone">
+            <div class="search-form">
+                <div class="container bg-form col-xl-12 col-sm-12"> 
+                    <form class="row d-flex justify-content-center align-content-center">         
+                        <div class=" col-xl-4 col-sm-6">                                
+                            <label for="check-in">Check-in</label>
+                            <input class="form-control form-control-sm" type="date" name="check-in" id="check-in">   
+                        </div>                        
+                        <div class=" col-xl-4 col-sm-6">                                
+                            <label for="check-out">Check-out</label>
+                            <input class="form-control form-control-sm" type="date" name="check-out" id="check-out"> 
+                        </div>
+                    </form>
                 </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('https://www.webtenerife.com/es/alojamiento/lists/destacadoscabecera/hotel-bahia-del-duque-s.jpg')"></div>
-                    <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Tu descanso, nuestra prioridad...</h2>
-                        <p class="lead mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis fuga odit qui porro voluptate deserunt voluptatem, vero, cum, repudiandae ut error beatae dolorum commodi excepturi id minus aut temporibus delectus.</p>
-                    </div>
+            </div>
+            <div class="search-form">
+                <div class="container bg-form col-xl-12 col-sm-12"> 
+                    <form class="row d-flex justify-content-center align-content-center">
+                        <div  class=" justify-content-center align-content-center col-xl-4 col-sm-6">                                
+                            <p>Medio de pago:</p>
+                        </div>         
+                        <div id="tipoPago" class="justify-content-center align-content-center col-xl-4 col-sm-6">
+                            <form name=testform>
+                                <input id="efectivo" name="Medio de pago" value=efectivo type=radio>Efectivo
+                                <input id="tarjetaDebito" name="Medio de pago" value=debito type=radio>Tarjeta de debito
+                                <input id="tarjetaCredito" name="Medio de pago" value=tarjeta type=radio>Tarjeta de credito
+                                </form>                                
+                        </div>                      
+                    
+                    </form>
                 </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://dondeviajar.republica.com/files/2017/04/10-razones-para-quedarse-todo-el-dia-en-el-hotel-680x443.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Disfruta de la vida sabiendo que tus cosas estan seguras donde las dejaste...</h2>
-                        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error culpa molestias maiores nostrum consequuntur voluptatibus deserunt illo mollitia eius vitae odio veritatis consequatur asperiores maxime, quod deleniti neque. Soluta.</p>
+            </div>
+            <div  class="search-form">
+                <div id="boxInicial" class="container bg-form col-xl-12 col-sm-12"> 
+                    <form class="row d-flex justify-content-center align-content-center transicion">         
+                        
+                        <div  class="form-row form-group flex-column align-items-center align-self-center col-xl-3 col-sm-6">                                
+                            <label>Cantidad de personas</label>
+                            <select id="cantPersonas" name="personas"  class="form-control-sm" required=""><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                        </div>
+
+                        <div  id="divCuotas" class=" col-xl-4 col-sm-6 dispNone transicion">                                
+                            <label>Cantidad de cuotas</label>
+                            <select id="cantCuotas" class="form-control-sm" required=""><option>1 cuota (sin interes)</option><option>3 cuotas (10% de interes)</option><option>6 cuotas (15% de interes)</option><option>9 cuotas (20% de interes)</option><option>12 cuotas (25% de interes)</option></select>
+                        
+                        </div>
+                        
+                        <div class="align-self-center col-xl-1 col-sm-6">
+                            <a href="#simulador"><button onclick="search()" id="book" type="button" class="btn btn-success btn-sm">Search</button></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="resultados" class="search-form dispNone transicion">
+                <div class="container bg-form col-xl-12 col-sm-12"> 
+                    <form class="row d-flex justify-content-center align-content-center">         
+                        <div class=" col-xl-4 col-sm-6">                                
+                            <label></label>
+                            <div class="form-control form-control-sm colorResultado"  id="unitario"> </div>
+                        </div>                        
+                        <div class=" col-xl-4 col-sm-6">                                
+                            <label for="check-out"></label>
+                            <div class="form-control form-control-sm colorResultado"  id="total">  </div> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="imagenesIlustrativas">
+            <div class="showcase">
+                <div class="container-fluid p-0">
+                    <div class="row g-0">
+                        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://dondeviajar.republica.com/files/2017/04/10-razones-para-quedarse-todo-el-dia-en-el-hotel-680x443.jpg')"></div>
+                        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                            <h2>Disfruta de la vida sabiendo que tus cosas estan seguras donde las dejaste...</h2>
+                            <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error culpa molestias maiores nostrum consequuntur voluptatibus deserunt illo mollitia eius vitae odio veritatis consequatur asperiores maxime, quod deleniti neque. Soluta.</p>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-lg-6 text-white showcase-img" style="background-image: url('https://www.webtenerife.com/es/alojamiento/lists/destacadoscabecera/hotel-bahia-del-duque-s.jpg')"></div>
+                        <div class="col-lg-6 my-auto showcase-text">
+                            <h2>Tu descanso, nuestra prioridad...</h2>
+                            <p class="lead mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis fuga odit qui porro voluptate deserunt voluptatem, vero, cum, repudiandae ut error beatae dolorum commodi excepturi id minus aut temporibus delectus.</p>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://cadenaser00.epimg.net/ser/imagenes/2017/07/21/sociedad/1500650308_386531_1500650567_noticia_normal.jpg')"></div>
+                        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                            <h2>Disfruta de la vida sabiendo que tus cosas estan seguras donde las dejaste...</h2>
+                            <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error culpa molestias maiores nostrum consequuntur voluptatibus deserunt illo mollitia eius vitae odio veritatis consequatur asperiores maxime, quod deleniti neque. Soluta.</p>
+                        </div>
                     </div>
                 </div>
             </div>

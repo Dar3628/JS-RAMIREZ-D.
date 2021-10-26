@@ -89,7 +89,9 @@
         }
        
         
-
+        $("#btn-simulador").click(function(){
+            $("#simulador").slideToggle(1000);
+        })
 
         const calculaInteresTarjetaCuota = () => {
             return (conInteresTarjetaCuota = conIva * interesTarjetaCuota);
@@ -110,7 +112,7 @@
        
 
         $("#book").click(function(){
-            $("#resultados").show();
+            $("#resultados").slideDown(3000);
         })
 
         $('#book').keypress(function (e) {
@@ -121,10 +123,10 @@
  
         $("#tipoPago").click(function() {
              if($("#tarjetaCredito").is(":checked")){
-                $("#divCuotas").show();
+                $("#divCuotas").slideDown(3000);
              } else{
                 if($("#tarjetaDebito").is(":checked") || $("#efectivo").is(":checked")){
-                    $("#divCuotas").hide();
+                    $("#divCuotas").slideUp(1000);
                     $("#cantCuotas").val("1 cuota (sin interes)");
                 }
              }
