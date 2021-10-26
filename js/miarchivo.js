@@ -62,23 +62,23 @@
         
         const cuantoInteres = () => {
             switch(true){
-                case numCuotas == "1":
+                case numCuotas == "1 cuota (sin interes)":
                    interesTarjetaCuota = 1;
                    break;
         
-                   case numCuotas == "3":
+                   case numCuotas == "3 cuotas (10% de interes)":
                     interesTarjetaCuota = 1.10;
                     break;
                 
-                    case numCuotas == "6":
+                    case numCuotas == "6 cuotas (15% de interes)":
                     interesTarjetaCuota = 1.15;
                     break;
                 
-                    case numCuotas == "9":
+                    case numCuotas == "9 cuotas (20% de interes)":
                     interesTarjetaCuota = 1.20;
                     break;
 
-                    case numCuotas == "12":
+                    case numCuotas == "12 cuotas (25% de interes)":
                     interesTarjetaCuota = 1.25;
                     break;
                        
@@ -125,7 +125,7 @@
              } else{
                 if($("#tarjetaDebito").is(":checked") || $("#efectivo").is(":checked")){
                     $("#divCuotas").hide();
-                    $("#cantCuotas").val("1");
+                    $("#cantCuotas").val("1 cuota (sin interes)");
                 }
              }
         })
