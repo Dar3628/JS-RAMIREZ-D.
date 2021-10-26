@@ -11289,7 +11289,7 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("https://digital.ihg.com/is/image/ihg/intercontinental-tegucigalpa-6071105521-2x1?wid=1440&fit=fit,1") no-repeat center center;
+  background-image:('.\img\imgHotel.png') no-repeat center center;
   background-size: cover;
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -11345,7 +11345,7 @@ header.masthead h1, header.masthead .h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("https://digital.ihg.com/is/image/ihg/intercontinental-tegucigalpa-6071105521-2x1?wid=1440&fit=fit,1") no-repeat center center;
+  background: url("12345") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
