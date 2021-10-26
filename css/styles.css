@@ -11289,7 +11289,7 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background-image:('.\img\imgHotel.png') no-repeat center center;
+  background: url("https://cache.marriott.com/marriottassets/marriott/SCLSI/sclsi-exterior-0398-hor-feat.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -11345,7 +11345,7 @@ header.masthead h1, header.masthead .h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("12345") no-repeat center center;
+  background: url("https://cache.marriott.com/marriottassets/marriott/SCLSI/sclsi-exterior-0398-hor-feat.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
