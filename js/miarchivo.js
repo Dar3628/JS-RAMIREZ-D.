@@ -107,12 +107,21 @@
 
         $("#book").click(function(){
             $("#total").empty();
-            $("#total").append("El precio final es de $ " + Math.trunc(numPersonas * conInteresTarjetaCuota));
+            $("#total").append("El precio final es de $ " + Math.trunc(numPersonas * conInteresTarjetaCuota))
+                        .css("border","solid")
+                        .css("border-radius", "10px")
+                        .css("border-color", "blue")
+                        .delay(1000) 
+                        .queue(function(next){
+                            $(this).css({"font-size": "1.5rem"});
+                            next();
+                            
+                    })
         })
        
 
         $("#book").click(function(){
-            $("#resultados").slideDown(3000);
+            $("#resultados").slideDown(700);
         })
 
         $('#book').keypress(function (e) {
@@ -126,7 +135,7 @@
                 $("#divCuotas").slideDown(3000);
              } else{
                 if($("#tarjetaDebito").is(":checked") || $("#efectivo").is(":checked")){
-                    $("#divCuotas").slideUp(1000);
+                    $("#divCuotas").slideUp(1000)                                   
                     $("#cantCuotas").val("1 cuota (sin interes)");
                 }
              }
