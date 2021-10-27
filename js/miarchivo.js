@@ -132,10 +132,12 @@
  
         $("#tipoPago").click(function() {
              if($("#tarjetaCredito").is(":checked")){
-                $("#divCuotas").slideDown(3000);
+                $("#divCuotas").slideDown();
+                $("#divCuotaHijo").slideDown(1000);
              } else{
                 if($("#tarjetaDebito").is(":checked") || $("#efectivo").is(":checked")){
-                    $("#divCuotas").slideUp(1000)                                   
+                    $("#divCuotas").slideUp(1000)
+                    $("#divCuotaHijo").slideUp(1000)                                   
                     $("#cantCuotas").val("1 cuota (sin interes)");
                 }
              }
