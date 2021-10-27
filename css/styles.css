@@ -11375,5 +11375,5 @@ footer.footer {
   margin-top: -2.5rem;
 }
 .transicion{
-  transition:linear;
+  transition:ease-out;
 }

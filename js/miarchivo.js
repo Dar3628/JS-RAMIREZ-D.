@@ -113,7 +113,7 @@
                         .css("border-color", "blue")
                         .delay(1000) 
                         .queue(function(next){
-                            $(this).css({"font-size": "1.5rem"});
+                            $(this).css({"font-size": "2rem"});
                             next();
                             
                     })
