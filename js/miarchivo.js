@@ -108,15 +108,23 @@
         $("#book").click(function(){
             $("#total").empty();
             $("#total").append("El precio final es de $ " + Math.trunc(numPersonas * conInteresTarjetaCuota))
-                        .css("border","solid")
-                        .css("border-radius", "10px")
-                        .css("border-color", "blue")
-                        .delay(1000) 
+                       
                         .queue(function(next){
-                            $(this).css({"font-size": "2rem"});
+                            $(this).animate({"font-size": "1.8rem"},500);
+                            $(this).css({"border":"solid",
+                                        "border-radius": "10px",
+                                        "border-color": "blue"})
                             next();
-                            
-                    })
+                        }) 
+                        .queue(function(next){                       
+                            $(this).animate({"font-size": "1.5rem"},1000);
+                            next()
+                        })
+                        .queue(function(next){
+                            $(this).animate({"font-size": "1.8rem"},2000),
+                            next();
+                        })
+                        
         })
        
 
