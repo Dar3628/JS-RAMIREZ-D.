@@ -29,6 +29,11 @@
         const agregarIva = () => {
             conIva = habitacionAsignada.precio * 1.21;
         }
+
+        const URL = "json/habitaciones.json";
+
+    
+
         //Declaramos un array de productos para almacenar objetos
         let habitaciones = [];
 
@@ -42,20 +47,31 @@
         
         habitaciones.push(new habitacion("familiar2", 5, 4, 12000));
         
-             
+           
         
-        const asignarHabitacion = () => {
+        // const asignarHabitacion = () => {
+        //     let habAsignadaSi = false;
+        //     for( let habitAux of habitaciones ){
+        //         if (habitAux.capacidad == numPersonas){
+        //         habitacionAsignada = habitAux;
+        //         habAsignadaSi = true;
+        //         }
+        //     }            
+        // }
+          
+         const asignarHabitacionSi = () =>{
+        $.get(URL, (respuesta,estado) =>{
+            console.log(respuesta);
+            console.log(estado);
             let habAsignadaSi = false;
-            for( let habitAux of habitaciones ){
+            for( let habitAux of respuesta){
                 if (habitAux.capacidad == numPersonas){
                 habitacionAsignada = habitAux;
                 habAsignadaSi = true;
                 }
             }
-            
-        }
-          
-        
+        })
+    }
     
         
         
