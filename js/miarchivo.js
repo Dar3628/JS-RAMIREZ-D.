@@ -1,9 +1,7 @@
 
-        //Saludo e inicio
-        // let cliente = prompt("Ingresa tu nombre");
-        // let saludo = alert("Hola " + cliente);
+        
                 //Conteo de personas
-        let numPersonas = 0;
+        // let numPersonas = 0;
                 //Facturacion
         let interesTarjetaCuota = 1;
         let precioProducto = 0.0;
@@ -26,10 +24,6 @@
             
         }
         
-        const agregarIva = () => {
-            conIva = habitacionAsignada.precio * 1.21;
-        }
-
         const URL = "json/habitaciones.json";
 
     
@@ -49,7 +43,7 @@
         
            
         
-        
+
         // const asignarHabitacion = () => {
         //     let habAsignadaSi = false;
         //     for( let habitAux of habitaciones ){
@@ -59,21 +53,31 @@
         //         }
         //     }            
         // }
-          
-         const asignarHabitacion = () =>{
+        //let habitacionAsignada= null;
+        let asignarHabitacion = () =>{
         $.get(URL, (respuesta,estado) =>{
             console.log(respuesta);
             console.log(estado);
             let habAsignadaSi = false;
             for( let habitAux of respuesta){
-                if (habitaciones.capacidad == numPersonas){
-                habitacionAsignada = habitAux;
+                if (habitAux.capacidad == numPersonas){
+                //habitacionAsignada = habitAux;
+                
+                habitacionAsignada = new habitacion(habitAux.tipo, habitAux.capacidad, habitAux.disponibles, habitAux.precio);
                 habAsignadaSi = true;
                 }
             }
-        })
+            
+        }).done(function() {
+            agregarIva();        
+            cuantoInteres(); 
+            calculaInteresTarjetaCuota();
+          })
     }
     
+    const agregarIva = () => {
+        conIva = habitacionAsignada.precio * 1.21;
+    }
         
         
         
@@ -184,8 +188,8 @@
         asignarHabitacion();
         agregarIva();        
         cuantoInteres(); 
-        calculaInteresTarjetaCuota();       
-
+        calculaInteresTarjetaCuota();
+        
         }
 
         
