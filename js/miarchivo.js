@@ -49,6 +49,7 @@
         
            
         
+        
         // const asignarHabitacion = () => {
         //     let habAsignadaSi = false;
         //     for( let habitAux of habitaciones ){
@@ -59,13 +60,13 @@
         //     }            
         // }
           
-         const asignarHabitacionSi = () =>{
+         const asignarHabitacion = () =>{
         $.get(URL, (respuesta,estado) =>{
             console.log(respuesta);
             console.log(estado);
             let habAsignadaSi = false;
             for( let habitAux of respuesta){
-                if (habitAux.capacidad == numPersonas){
+                if (habitaciones.capacidad == numPersonas){
                 habitacionAsignada = habitAux;
                 habAsignadaSi = true;
                 }

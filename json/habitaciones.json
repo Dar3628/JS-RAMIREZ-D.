@@ -4,14 +4,14 @@
     "nombre": "individual",
     "capacidad": 1,
     "cantDisponibles": 4,
-    "precio": 3700, 
+    "precio": 3700 
 },
 {
     "id": "doble",
     "nombre": "doble",
     "capacidad": 2,
     "cantDisponibles": 1,
-    "precio": 6000,
+    "precio": 6000
 },
 
 {    
@@ -19,20 +19,20 @@
     "nombre": "triple",
     "capacidad": 3,
     "cantDisponibles": 5,
-    "precio": 9000,   
+    "precio": 9000   
 },
 {    
     "id": "familiar",
     "nombre": "familiar",
     "capacidad": 4,
     "cantDisponibles": 3,
-    "precio": 10500,   
+    "precio": 10500   
 },
 {    
     "id": "familiar2",
     "nombre": "familiar2",
     "capacidad": 5,
     "cantDisponibles": 4,
-    "precio": 12000,   
+    "precio": 12000  
 }
 ]
