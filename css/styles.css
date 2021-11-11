@@ -207,7 +207,7 @@ mark, .mark {
   background-color: #fcf8e3;
 }
 
-.search-form{
+.calcular-form{
   display: block;
   background-color: rgb(200, 200, 226);
 
@@ -430,7 +430,7 @@ legend + * {
   height: auto;
 }
 
-[type=search] {
+[type=calcular] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
 }
@@ -443,7 +443,7 @@ legend + * {
   direction: ltr;
 }
 */
-::-webkit-search-decoration {
+::-webkit-calcular-decoration {
   -webkit-appearance: none;
 }
 
@@ -6111,7 +6111,7 @@ textarea.form-control-lg {
   "autoRename": true,
   "stringMap":[ {
     "name"    : "prev-next",
-    "search"  : "prev",
+    "calcular"  : "prev",
     "replace" : "next"
   } ]
 } */

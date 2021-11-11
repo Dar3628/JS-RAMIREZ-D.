@@ -18,10 +18,12 @@
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#!">Bienvenidos</a>
-                <a id="btn-simulador" class="btn btn-primary" href="#encabezado">Simular costos de habitacion por día</a>
-                <a class="btn btn-primary" href="#signup">Deseo que me contacten</a>
+            <div class="container calcular-form">
+                <a class="navbar-brand" href="#encabezado">Home</a>
+                <a id="btn-simulador" class="btn navbar-brand" href="#encabezado">Simular costos por día</a>
+                <a id="btn-reservar" class="btn navbar-brand" href="#simulador">Concretar reserva</a>
+                <a class="btn navbar-brand" href="#encabezado">Quejas o sugerencias</a>
+                <a class="btn navbar-brand" href="#signup">Asesoramiento personalizado</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -49,21 +51,7 @@
         </header>
         <!--buscador-->
         <section id="simulador" class="dispNone">
-            <div class="search-form">
-                <div class="container bg-form col-xl-12 col-sm-12"> 
-                    <form class="row d-flex justify-content-center align-content-center">         
-                        <div class=" col-xl-4 col-sm-6">                                
-                            <label for="check-in">Check-in</label>
-                            <input class="form-control form-control-sm" type="date" name="check-in" id="check-in">   
-                        </div>                        
-                        <div class=" col-xl-4 col-sm-6">                                
-                            <label for="check-out">Check-out</label>
-                            <input class="form-control form-control-sm" type="date" name="check-out" id="check-out"> 
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="search-form">
+            <div class="calcular-form">
                 <div class="container bg-form col-xl-12 col-sm-12"> 
                     <form class="row d-flex justify-content-center align-content-center">
                         <div  class=" justify-content-center align-content-center col-xl-4 col-sm-6">                                
@@ -74,13 +62,13 @@
                                 <input id="efectivo" name="Medio de pago" value=efectivo type=radio>Efectivo
                                 <input id="tarjetaDebito" name="Medio de pago" value=debito type=radio>Tarjeta de debito
                                 <input id="tarjetaCredito" name="Medio de pago" value=tarjeta type=radio>Tarjeta de credito
-                                </form>                                
+                            </form>                                
                         </div>                      
                     
                     </form>
                 </div>
             </div>
-            <div  class="search-form">
+            <div  class="calcular-form">
                 <div id="boxInicial" class="container bg-form col-xl-12 col-sm-12"> 
                     <form class="row d-flex justify-content-center align-content-center transicion">         
                         
@@ -97,12 +85,12 @@
                         </div>
                         
                         <div class="align-self-center col-xl-1 col-sm-6">
-                            <a href="#simulador"><button onclick="search()" id="book" type="button" class="btn btn-success btn-sm transicion">Search</button></a>
+                            <a href="#simulador"><button onclick="calcular()" id="book" type="button" class="btn btn-success btn-sm transicion">calcular</button></a>
                         </div>
                     </form>
                 </div>
             </div>
-            <div id="resultados" class="search-form dispNone transicion">
+            <div id="resultados" class="calcular-form dispNone transicion">
                 <div class="container bg-form col-xl-12 col-sm-12"> 
                     <form class="row d-flex justify-content-center align-content-center">         
                         <div class=" col-xl-4 col-sm-6">                                
@@ -116,6 +104,37 @@
                     </form>
                 </div>
             </div>
+        </section>
+
+        <!-- aca se concreta la reserva -->
+
+        <section id="reservar" class="dispNone">
+            <div class="calcular-form">
+                <div class="container bg-form col-xl-12 col-sm-12"> 
+                    <form class="row d-flex justify-content-center align-content-center">         
+                        <div class=" col-xl-4 col-sm-6">                                
+                            <label for="check-in">Check-in</label>
+                            <input class="form-control form-control-sm" type="date" name="check-in" id="check-in">   
+                        </div>                        
+                        <div class=" col-xl-4 col-sm-6">                                
+                            <label for="check-out">Check-out</label>
+                            <input class="form-control form-control-sm" type="date" name="check-out" id="check-out"> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+           
+            <div  class="calcular-form">
+                <div id="" class="container bg-form col-xl-12 col-sm-12"> 
+                    <form class="row d-flex justify-content-center align-content-center transicion">         
+                        
+                        <div class="align-self-center col-xl-1 col-sm-6">
+                            <a href="#simulador"><button onclick="calcular()" id="book" type="button" class="btn btn-success btn-sm transicion">Concretar reserva</button></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
         </section>
         
 

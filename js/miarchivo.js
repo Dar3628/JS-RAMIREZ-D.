@@ -114,6 +114,11 @@
             $("#simulador").slideToggle(1000);
         })
 
+        $("#btn-reservar").click(function(){
+            $("#simulador").slideDown(1000);
+            $("#reservar").slideToggle(1000);
+        })
+
         const calculaInteresTarjetaCuota = () => {
             return (conInteresTarjetaCuota = conIva * interesTarjetaCuota);
         }
@@ -179,7 +184,7 @@
         })
         
             
-        let search = () => {
+        let calcular = () => {
         let opcion = document.getElementById("cantPersonas");
         numPersonas = opcion.options[opcion.selectedIndex].text;
         let option2 = document.getElementById("cantCuotas");
