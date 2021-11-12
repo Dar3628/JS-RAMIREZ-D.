@@ -114,9 +114,14 @@
             $("#simulador").slideToggle(1000);
         })
 
+        // $("#btn-reservar").click(function(){
+        //     $("#simulador").slideDown(1000);
+        //     $("#reservar").slideToggle(1000);
+        // })
+
         $("#btn-reservar").click(function(){
-            $("#simulador").slideDown(1000);
-            $("#reservar").slideToggle(1000);
+            $("#seccion1b").hide(2000);
+            $("#seccion1c").show(4000);
         })
 
         const calculaInteresTarjetaCuota = () => {
@@ -136,18 +141,18 @@
             $("#total").append("El precio final es de $ " + Math.trunc(numPersonas * conInteresTarjetaCuota))
                        
                         .queue(function(next){
-                            $(this).animate({"font-size": "1.8rem"},500);
+                            $(this).animate({"font-size": "1.6rem"},500);
                             $(this).css({"border":"solid",
                                         "border-radius": "10px",
                                         "border-color": "blue"})
                             next();
                         }) 
                         .queue(function(next){                       
-                            $(this).animate({"font-size": "1.5rem"},1000);
+                            $(this).animate({"font-size": "1.3rem"},1000);
                             next()
                         })
                         .queue(function(next){
-                            $(this).animate({"font-size": "1.8rem"},2000),
+                            $(this).animate({"font-size": "1.5rem"},2000),
                             next();
                         })
                         
