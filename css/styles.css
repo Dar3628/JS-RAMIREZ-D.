@@ -216,6 +216,12 @@ mark, .mark {
   height: 5rem;
 }
 
+.calcular-form-contenido{
+  display: block;
+  background-color: rgb(200, 200, 226);
+  border-color: rgb(51, 51, 163);
+}
+
 sub,
 sup {
   position: relative;
@@ -2236,7 +2242,7 @@ progress {
 }
 .form-control::-webkit-file-upload-button {
   padding: 0.75rem 1rem;
-  margin: -0.75rem -1rem;
+  margin: 0.75rem -1rem;
   -webkit-margin-end: 1rem;
           margin-inline-end: 1rem;
   color: #212529;
@@ -11318,7 +11324,7 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .showcase .showcase-text {
-  padding: 3rem;
+  padding: 1rem;
 }
 .showcase .showcase-img {
   min-height: 30rem;
@@ -11326,7 +11332,7 @@ header.masthead h1, header.masthead .h1 {
 }
 @media (min-width: 768px) {
   .showcase .showcase-text {
-    padding: 7rem;
+    padding: 2.3rem;
   }
 }
 
@@ -11372,7 +11378,7 @@ footer.footer {
 .colorResultado{
   background-color: rgb(150, 185, 230);
   font-size: 1rem;
-  margin-top: -2.5rem;
+  margin-top: rem;
 }
 .transicion{
   transition:ease;
