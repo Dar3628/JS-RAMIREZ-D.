@@ -99,7 +99,7 @@
                         </div>                        
                         <div class=" col-xl-4 col-sm-6 transicion">                                
                             <label for="check-out"></label>
-                            <div class="<!-- form-control form-control-sm --> colorResultado transicion"  id="total">  </div> 
+                            <div class="<!-- form-control form-control-sm  colorResultado transicion"  id="total">  </div> 
                         </div>
                     </form>
                 </div>
@@ -144,7 +144,7 @@
                 <div class="container-fluid p-0 transicion">
                     <div id="seccion1" class="row g-0 transicion">
                         <div id="seccion1a" class="col-lg-6 order-lg-2 text-white showcase-img transicion" style="background-image: url('https://dondeviajar.republica.com/files/2017/04/10-razones-para-quedarse-todo-el-dia-en-el-hotel-680x443.jpg')"></div>
-                        <div id="seccion1b" class="col-lg-6 order-lg-1 my-auto showcase-text transicion">
+                        <div id="seccion1b" class="col-lg-6 order-lg-1 showcase-text transicion">
                             <h2>Disfruta de la vida sabiendo que tus cosas estan seguras donde las dejaste...</h2>
                             <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error culpa molestias maiores nostrum consequuntur voluptatibus deserunt illo mollitia eius vitae odio veritatis consequatur asperiores maxime, quod deleniti neque. Soluta.</p>
                         </div>
@@ -154,45 +154,66 @@
                                 <form class="row d-flex justify-content-center align-content-center transicion">         
                                     
                                     <div  class="form-group flex-column align-items-center align-self-center ">                                
-                                        <label>Cantidad de personas</label>
+                                        <label><h6>Cantidad de personas: </h6> </label>
                                         <select id="cantPersonas" name="personas"  class="form-control-sm" required=""><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
                                     </div>            
                                     
                                     <div  class=" justify-content-center">                                
-                                        <p>Medio de pago:</p>
+                                        <h6>Medio de pago:</h6>
                                     </div>         
-                                    <div id="tipoPago" class="justify-content-center align-content-center ">
-                                        <form name=testform>
+                                    <div id="tipoPago" class="justify-content-center align-content-center my-2 ">
+                                        <form name=testform class="container">
                                             <input id="efectivo" name="Medio de pago" value=efectivo type=radio>Efectivo
                                             <input id="tarjetaDebito" name="Medio de pago" value=debito type=radio>Tarjeta de debito
                                             <input id="tarjetaCredito" name="Medio de pago" value=tarjeta type=radio>Tarjeta de credito
                                         </form>                                
                                     </div>
 
-                                    <div  id="divCuotas" class=" col-xl-4 col-sm-6 dispNone  transicion">  
-                                        <div id="divCuotaHijo" class="dispNone transicion">                              
-                                            <label>Cantidad de cuotas</label>
+                                    <div  id="divCuotas" class="justify-content-center align-content-center dispNone  transicion">  
+                                        <div id="divCuotaHijo" class="form-group flex-column align-items-center align-self-center transicion">                              
+                                            <label><h6>Cantidad de cuotas: </h6> </label>
                                             <select id="cantCuotas" class="form-control-sm" required=""><option>1 cuota (sin interes)</option><option>3 cuotas (10% de interes)</option><option>6 cuotas (15% de interes)</option><option>9 cuotas (20% de interes)</option><option>12 cuotas (25% de interes)</option></select>
                                         </div>    
                                     </div>
 
-                                    <div class="align-self-center col-xl-1 col-sm-6">
-                                        <a href="#simulador"><button onclick="calcular()" id="book" type="button" class="btn btn-success btn-sm my-3 transicion">calcular</button></a>
+                                    <div class="calcular-form my-2">
+                                        <div class="container  col-xl-12 col-sm-12"> 
+                                            <form class="row d-flex justify-content-center align-content-center">         
+                                                <div class=" col-xl-4 col-sm-4">                                
+                                                    <label for="check-in">Check-in</label>
+                                                    <input class="form-control form-control-sm" type="date" name="check-in" id="check-in">   
+                                                </div>                        
+                                                <div class=" col-xl-4 col-sm-4">                                
+                                                    <label for="check-out">Check-out</label>
+                                                    <input class="form-control form-control-sm" type="date" name="check-out" id="check-out"> 
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4">
+                                                    <a href="#simulador"><button onclick="calcular()" id="book" type="button" class="btn btn-success btn-sm my-3 transicion">Calcular</button></a>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
 
                                     <div id="resultados" class="calcular-form dispNone transicion">
                                         <div class="container  col-xl-12 col-sm-12"> 
                                             <form class="justify-content-center align-content-center">         
-                                                <div>                                
+                                                <!-- <div>                                
                                                     <label></label>
                                                     <div class="form-control form-control-sm colorResultado"  id="unitario"> </div>
-                                                </div>                        
-                                                <div >                                
+                                                </div>                         -->
+                                                <div > 
+                                                    <div class="col-xl-9 col-sm-9">
+                                                        <h5>El costo estimado por reserva anticipada es de:</h5>
+                                                    </div>                               
                                                     <label></label>
-                                                    <div class="form-control form-control-sm colorResultado transicion"  id="total">  </div> 
+                                                    <div class="col-xl-3 col-sm-3 text-center colorResultado transicion"  id="total"></div> 
                                                 </div>
                                             </form>
                                         </div>
+                                    </div>
+
+                                    <div class="container col-xl-4 col-sm-4">
+                                        <a href="#seccion2"><button id="btn-continuar1" type="button" class="btn btn-success btn-sm my-3 transicion">Continuar</button></a>
                                     </div>
 
                                 </form>
@@ -200,18 +221,31 @@
                         
                         </div>
                     </div>
-                    <div class="row g-0">
-                        <div class="col-lg-6 text-white showcase-img transicion" style="background-image: url('https://www.webtenerife.com/es/alojamiento/lists/destacadoscabecera/hotel-bahia-del-duque-s.jpg')"></div>
-                        <div class="col-lg-6 my-auto showcase-text transicion">
+                    <div id="seccion2" class="row g-0">
+                        <div id="seccion2a" class="col-lg-6 text-white showcase-img transicion" style="background-image: url('https://www.webtenerife.com/es/alojamiento/lists/destacadoscabecera/hotel-bahia-del-duque-s.jpg')">
+                        </div>
+                        <div id="seccion2b" class="col-lg-6 order-lg-2 showcase-text transicion">
                             <h2>Tu descanso, nuestra prioridad...</h2>
                             <p class="lead mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis fuga odit qui porro voluptate deserunt voluptatem, vero, cum, repudiandae ut error beatae dolorum commodi excepturi id minus aut temporibus delectus.</p>
+                        </div>                        
+                        <div id="seccion2c" class="calcular-form-contenido col-lg-6 order-lg-1 showcase-text dispNone transicion">
+                            <h5>El costo estimado por reserva anticipada es de:</h5>
+                            <div class="container col-xl-4 col-sm-4">
+                                <a href="#seccion3"><button id="btn-continuar2" type="button" class="btn btn-success btn-sm my-3 transicion">Continuar</button></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="row g-0">
-                        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://cadenaser00.epimg.net/ser/imagenes/2017/07/21/sociedad/1500650308_386531_1500650567_noticia_normal.jpg')"></div>
-                        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <div id="seccion3" class="row g-0">
+                        <div id="seccion3a" class="col-lg-6 order-lg-2 text-white showcase-img transicion" style="background-image: url('https://cadenaser00.epimg.net/ser/imagenes/2017/07/21/sociedad/1500650308_386531_1500650567_noticia_normal.jpg')"></div>
+                        <div id="seccion3b" class="col-lg-6 order-lg-1 showcase-text transicion">
                             <h2>Disfruta de la vida sabiendo que tus cosas estan seguras donde las dejaste...</h2>
                             <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error culpa molestias maiores nostrum consequuntur voluptatibus deserunt illo mollitia eius vitae odio veritatis consequatur asperiores maxime, quod deleniti neque. Soluta.</p>
+                        </div>
+                        <div id="seccion3c" class="calcular-form-contenido col-lg-6 order-lg-2 showcase-text dispNone transicion">
+                            <h5>El costo estimado por reserva anticipada es de:</h5>
+                            <div class="container col-xl-4 col-sm-4">
+                                <a href="#seccion3"><button id="btn-continuar2" type="button" class="btn btn-success btn-sm my-3 transicion">Continuar</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>

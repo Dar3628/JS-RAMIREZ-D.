@@ -119,9 +119,28 @@
         //     $("#reservar").slideToggle(1000);
         // })
 
-        $("#btn-reservar").click(function(){
+        $("#btn-simulador").click(function(){
+            $("#seccion1a").queue(function(next){
+                $(this).css("order","1");
+            }) 
             $("#seccion1b").hide(2000);
             $("#seccion1c").show(4000);
+        })
+
+        $("#btn-continuar1").click(function(){
+            $("#seccion2b").hide(2000);
+            $("#seccion2c").show(4000);
+            $("#seccion2a").queue(function(next){
+                $(this).css("order","2");
+            })               
+        })
+
+        $("#btn-continuar2").click(function(){
+            $("#seccion3a").queue(function(next){
+                $(this).css("order","1");
+            }) 
+            $("#seccion3b").hide(2000);
+            $("#seccion3c").show(4000);
         })
 
         const calculaInteresTarjetaCuota = () => {
@@ -130,15 +149,15 @@
 
         
 
-        $("#book").click(function(){
-            $("#unitario").empty();
-            $("#unitario").append("El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota));
-        })
+        // $("#book").click(function(){
+        //     $("#unitario").empty();
+        //     $("#unitario").append("El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota));
+        // })
        
 
         $("#book").click(function(){
             $("#total").empty();
-            $("#total").append("El precio final es de $ " + Math.trunc(numPersonas * conInteresTarjetaCuota))
+            $("#total").append(" $ " + Math.trunc(numPersonas * conInteresTarjetaCuota))
                        
                         .queue(function(next){
                             $(this).animate({"font-size": "1.6rem"},500);
