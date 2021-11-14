@@ -114,11 +114,7 @@
             $("#simulador").slideToggle(1000);
         })
 
-        // $("#btn-reservar").click(function(){
-        //     $("#simulador").slideDown(1000);
-        //     $("#reservar").slideToggle(1000);
-        // })
-
+      
         $("#btn-simulador").click(function(){
             $("#seccion1a").queue(function(next){
                 $(this).css("order","1");
@@ -132,6 +128,7 @@
             $("#seccion2c").show(4000);
             $("#seccion2a").queue(function(next){
                 $(this).css("order","2");
+                $(this).css("position","relative");
             })               
         })
 

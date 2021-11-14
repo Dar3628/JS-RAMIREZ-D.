@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
     </head>
     <body>
         <!-- Navigation-->
@@ -222,16 +223,210 @@
                         </div>
                     </div>
                     <div id="seccion2" class="row g-0">
-                        <div id="seccion2a" class="col-lg-6 text-white showcase-img transicion" style="background-image: url('https://www.webtenerife.com/es/alojamiento/lists/destacadoscabecera/hotel-bahia-del-duque-s.jpg')">
+                        <div id="seccion2a" class="col-lg-6 text-white showcase-img transicion" style="background-image: url('img/para\ el\ hotel.png')">
                         </div>
                         <div id="seccion2b" class="col-lg-6 order-lg-2 showcase-text transicion">
                             <h2>Tu descanso, nuestra prioridad...</h2>
                             <p class="lead mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis fuga odit qui porro voluptate deserunt voluptatem, vero, cum, repudiandae ut error beatae dolorum commodi excepturi id minus aut temporibus delectus.</p>
                         </div>                        
-                        <div id="seccion2c" class="calcular-form-contenido col-lg-6 order-lg-1 showcase-text dispNone transicion">
-                            <h5>El costo estimado por reserva anticipada es de:</h5>
-                            <div class="container col-xl-4 col-sm-4">
-                                <a href="#seccion3"><button id="btn-continuar2" type="button" class="btn btn-success btn-sm my-3 transicion">Continuar</button></a>
+                        <div id="seccion2c" class="calcular-form-contenido col-lg-6 order-lg-1 showcase-text width-40 dispNone transicion">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            Huésped #1(a nombre de quien estará la reserva)
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                             <!-- Registrarse -->
+                                            <div id="registrarse">
+                                                <form>
+                                                    <div>
+                                                        <div>
+                                                            <label id="name"> </label>
+                                                            <input class="registroInput" type="text" placeholder="Escribe aqui tu/s nombre/s" required>
+                                                        </div>
+                                                        <div>
+                                                            <label id="apellido"> </label>
+                                                            <input class="registroInput" type="text" placeholder="Escribe aqui tu/s apellido/s" required>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <label id="usuario"> </label>
+                                                        <input class="registroInput" type="text" placeholder="Ingresa tu N° de DNI/Pasaorte" required>
+                                                    </div>
+                                                    <div>
+                                                        <label id="mail"> </label>
+                                                        <input class="registroInput" type="email" placeholder="Escribe aqui tu direccion de correo electronico" required>
+                                                    </div>
+                                                    <div>
+                                                        <label id="contraseña"></label>
+                                                        <input class="registroInput" type="number" placeholder="Ingresa tu edad" required>
+                                                    </div>
+                                                    <div>
+                                                        <label id="contraseña"></label>
+                                                        <input class="registroInput" type="tel" placeholder="Escribe un telefono de contacto" required>
+                                                    </div>
+                                                    <input  type="submit" class="btn btn-success btn-sm my-3 transicion" value="Registrarse">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            Huésped N°2
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <div id="registrarse">
+                                                <form>
+                                                    <div>
+                                                        <div>
+                                                            <label id="name"> </label>
+                                                            <input class="registroInput" type="text" placeholder="Escribe aqui su/s nombre/s" required>
+                                                        </div>
+                                                        <div>
+                                                            <label id="apellido"> </label>
+                                                            <input class="registroInput" type="text" placeholder="Escribe aqui su/s apellido/s" required>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <label id="contraseña"></label>
+                                                        <input class="registroInput" type="number" placeholder="Ingresa su edad" required>
+                                                    </div>
+                                                    <div>
+                                                        <label id="contraseña"></label>
+                                                        <input class="registroInput" type="tel" placeholder="Escribe un telefono de contacto" required>
+                                                    </div>
+                                                    <input  type="submit" class="btn btn-success btn-sm my-3 transicion" value="Registrar">
+                                                </form>
+                                            </div>                                        
+                                        </div>
+                                    </div>                                
+                                </div> 
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                            Huésped N°3
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <div class="accordion-body">
+                                                <div id="registrarse">
+                                                    <form>
+                                                        <div>
+                                                            <div>
+                                                                <label id="name"> </label>
+                                                                <input class="registroInput" type="text" placeholder="Escribe aqui su/s nombre/s" required>
+                                                            </div>
+                                                            <div>
+                                                                <label id="apellido"> </label>
+                                                                <input class="registroInput" type="text" placeholder="Escribe aqui su/s apellido/s" required>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label id="contraseña"></label>
+                                                            <input class="registroInput" type="number" placeholder="Ingresa su edad" required>
+                                                        </div>
+                                                        <div>
+                                                            <label id="contraseña"></label>
+                                                            <input class="registroInput" type="tel" placeholder="Escribe un telefono de contacto" required>
+                                                        </div>
+                                                        <input  type="submit" class="btn btn-success btn-sm my-3 transicion" value="Registrar">
+                                                    </form>
+                                                </div>                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                            Huésped N°4
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <div class="accordion-body">
+                                                <div id="registrarse">
+                                                    <form>
+                                                        <div>
+                                                            <div>
+                                                                <label id="name"> </label>
+                                                                <input class="registroInput" type="text" placeholder="Escribe aqui su/s nombre/s" required>
+                                                            </div>
+                                                            <div>
+                                                                <label id="apellido"> </label>
+                                                                <input class="registroInput" type="text" placeholder="Escribe aqui su/s apellido/s" required>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label id="contraseña"></label>
+                                                            <input class="registroInput" type="number" placeholder="Ingresa su edad" required>
+                                                        </div>
+                                                        <div>
+                                                            <label id="contraseña"></label>
+                                                            <input class="registroInput" type="tel" placeholder="Escribe un telefono de contacto" required>
+                                                        </div>
+                                                        <input  type="submit" class="btn btn-success btn-sm my-3 transicion" value="Registrar">
+                                                    </form>
+                                                </div>                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                            Huésped N°5
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <div class="accordion-body">
+                                                <div id="registrarse">
+                                                    <form>
+                                                        <div>
+                                                            <div>
+                                                                <label id="name"> </label>
+                                                                <input class="registroInput" type="text" placeholder="Escribe aqui su/s nombre/s" required>
+                                                            </div>
+                                                            <div>
+                                                                <label id="apellido"> </label>
+                                                                <input class="registroInput" type="text" placeholder="Escribe aqui su/s apellido/s" required>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label id="contraseña"></label>
+                                                            <input class="registroInput" type="number" placeholder="Ingresa su edad" required>
+                                                        </div>
+                                                        <div>
+                                                            <label id="contraseña"></label>
+                                                            <input class="registroInput" type="tel" placeholder="Escribe un telefono de contacto" required>
+                                                        </div>
+                                                        <input  type="submit" class="btn btn-success btn-sm my-3 transicion" value="Registrar">
+                                                    </form>
+                                                </div>                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container col-xl-4 col-sm-4">
+                                    <a href="#seccion3">
+                                        <button id="btn-continuar2" type="button" class="btn btn-success btn-sm my-3 transicion">Continuar                                            
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
