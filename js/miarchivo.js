@@ -203,7 +203,20 @@
         $("#tarjetaCredito").click(function(){
             $("#divCuotas").show();
         })
-        
+
+        let fecha1 = new Date(document.getElementById('check-in'));
+        let fecha2 = new Date(document.getElementById("check-out"));
+        const milisegundosDia = 24*60*60*1000;
+        let milisegundosTranscurridos = Math.abs(fecha1.getTime() - fecha2.getTime());
+        let diastranscurridos = Math.round(milisegundosTranscurridos/milisegundosDia);
+
+        console.log(fecha1);
+        console.log(fecha2);
+        console.log(milisegundosDia);
+        console.log(milisegundosTranscurridos);
+        console.log(diastranscurridos);
+
+
             
         let calcular = () => {
         let opcion = document.getElementById("cantPersonas");
