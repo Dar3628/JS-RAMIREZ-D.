@@ -37,21 +37,7 @@
                 this.telefono = parseInt(telefono);
             }
         }
-        const URLhuespedes = "json/huespedes.json";
-        class reserva {
-            constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-                this.huespedes  = huespedes;
-                this.habitacion  = habitacion;
-                this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
-                this.fechaCheckOut  = fechaCheckOut;
-                this.codigo = codigo; // generar
-            }
-        }
-        const URLReservas = "json/reservas.json";
-
-        // let guardarHuesped = function(){
-        //     reserva.huespedes.push(huespedAguardar);
-        // }
+        
 
     
 
@@ -287,9 +273,27 @@
         
         }
 
-        $("#btn-reservar").click(function(){
-            guardarReserva();
-        })
+
+        const URLhuespedes = "json/huespedes.json";
+        class reserva {
+            constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
+                this.huespedes  = huespedes;
+                this.habitacion  = habitacion;
+                this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
+                this.fechaCheckOut  = fechaCheckOut;
+                this.codigo = codigo; // generar
+            }
+        }
+        const URLReservas = "json/reservas.json";
+
+        // let guardarHuesped = function(){
+        //     reserva.huespedes.push(huespedAguardar);
+        // }
+
+
+        // $("#btn-reservar").click(function(){
+        //     guardarReserva();
+        // })
 
         const guardarReserva = () =>{
             let habitacionAux = new habitacion("individual", 1, 4, 3700);
@@ -313,3 +317,31 @@
 //Declaramos la información a enviar
 //Agregamos un botón con jQuery
 //Escuchamos el evento click del botón agregado
+
+$("#btn-reservar").click(function(){
+        guardarReserva();
+    })
+//let guardarReserva = new Array();
+    
+
+    function reservaAux(URLReservas) {
+        let huespedes = $('#apellido').val();
+        let habitacion = $('#cantPersonas').val();
+        let fechaCheckIn = $('#checkIn').val();
+        let fechaCheckOut = $('checkout').val();
+        let codigo = document.getElementById$('#dni').val();
+
+
+        jsonObject.push({
+            huespedes: morales,
+            habitacion: 3,
+            fechaCheckIn: 12/23/2021,
+            fechaCheckIn: 12/26/2021,
+            codigo: 34576274,
+        });
+
+        console.log(jsonObject); //array de objetos
+        let jsonString = JSON.stringify(jsonObject); //convertirmos el array de objetos a un string con formato json
+        console.log(jsonString);
+
+    }
