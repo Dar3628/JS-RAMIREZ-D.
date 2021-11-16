@@ -1,7 +1,7 @@
 
         
                 //Conteo de personas
-        // let numPersonas = 0;
+        let numPersonas = 0;
                 //Facturacion
         let interesTarjetaCuota = 1;
         let precioProducto = 0.0;
@@ -28,25 +28,26 @@
         
         const URL = "json/habitaciones.json";
         class huesped {
-            constructor(dni, capacidad, disponibles, precio) {
-                this.dni  = tipo.toUpperCase();
-                this.capacidad  = parseInt(capacidad);
-                this.disponibles  = parseInt(disponibles);
-                this.precio  = parseFloat (precio);
-                this.ocupada = false;
+            constructor(nombre, apellido, dni, mail, edad, telefono) {
+                this.nombre  = tipo.toUpperCase(nombre);
+                this.apellido  = tipo.toUpperCase(apellido);
+                this.dni  = parseInt(dni);
+                this.mail  = tipo.toLowerCase(mail);
+                this.edad = parseInt(edad);
+                this.telefono = parseInt(telefono);
             }
         }
         const URLhuespedes = "json/huespedes.json";
         class reserva {
             constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-                this.huespedes  = [];
-                this.habitacion  = habitacionAsignada;
-                this.fechaCheckIn  = fecha1; // ver que es variable local de la funcion Calcular; 
-                this.fechaCheckOut  = diastranscurridos;
-                this.codigo = 0; // generar
+                this.huespedes  = huespedes;
+                this.habitacion  = habitacion;
+                this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
+                this.fechaCheckOut  = fechaCheckOut;
+                this.codigo = codigo; // generar
             }
         }
-        const URLReservas = "json/reservas.json";
+        const URLReservas = "json/";
 
         // let guardarHuesped = function(){
         //     reserva.huespedes.push(huespedAguardar);
@@ -70,16 +71,7 @@
            
         
 
-        // const asignarHabitacion = () => {
-        //     let habAsignadaSi = false;
-        //     for( let habitAux of habitaciones ){
-        //         if (habitAux.capacidad == numPersonas){
-        //         habitacionAsignada = habitAux;
-        //         habAsignadaSi = true;
-        //         }
-        //     }            
-        // }
-        //let habitacionAsignada= null;
+        
         let asignarHabitacion = () =>{
         $.get(URL, (respuesta,estado) =>{
             console.log(respuesta);
@@ -142,7 +134,7 @@
        
         
         $("#btn-simulador").click(function(){
-            $("#simulador").slideToggle(1000);
+            $("#simulador").slideToggle(1000);            
         })
 
       
@@ -161,24 +153,33 @@
                 $(this).css("order","2");
                 $(this).css("position","relative");
             })
-                        
+                
         })
             
                                                                                 // ver
 
 
         $("#btn-continuar1").click(function(){
-            $("#accordionFlushExample").ready(function(){
-                if(numPersonas === 2){
-                    $("#huesped2").css("display","block")
-                } else if(numPersonas === 3){
-                    ($("#huesped2") && $("#huesped3")).css("display","block")
-                } else if(numPersonas === 4){
-                    ($("#huesped2") && $("#huesped3") && $("#huesped4")).css("display","block")
-                } else if(numPersonas === 5){
-                    ($("#huesped2") && $("#huesped3") && $("#huesped4") && $("#huesped5")).css("display","block")
-                } else (($("#huesped2") || $("#huesped3") || $("#huesped4") || $("#huesped5")).css("display","none"))
-            })
+                    ($("#huesped2")).css("display","none");
+                    ($("#huesped2")).css("display","none");
+                    ($("#huesped3")).css("display","none");
+                    ($("#huesped4")).css("display","none");
+                    ($("#huesped5")).css("display","none")
+                if ($("#cantPersonas").val() >= 1){
+                    ($("#huesped1")).css("display","block");
+                }
+                if ($("#cantPersonas").val() >= 2){
+                    ($("#huesped2")).css("display","block");                    
+                }
+                if ($("#cantPersonas").val() >= 3){
+                    ($("#huesped3")).css("display","block");
+                }
+                if ($("#cantPersonas").val() >= 4){
+                    ($("#huesped4")).css("display","block")
+                }
+                if ($("#cantPersonas").val() >= 5){
+                    ($("#huesped5")).css("display","block")
+                }
         })
 
         $("#btn-continuar2").click(function(){
@@ -286,6 +287,29 @@
         
         }
 
-        
+        $("#btn-reservar").click(function(){
+            guardarReserva();
+        })
 
+        const guardarReserva = () =>{
+            let habitacionAux = new habitacion("individual", 1, 4, 3700);
+            let reservaAux = new reserva(null, habitacionAux, Date.now(), Date.now(), "34576274");
+            const infoPost =  JSON.stringify(reservaAux);
+            $("#btn-reservar").click(() => { 
+                $.post(URLReservas, infoPost ,(respuesta, estado) => {
+                    if(estado === "success"){
+                        $("body").prepend(`<div>
+            Guardado:${respuesta.nombre}
+            </div>`);
+                    }  
+                });
+            });
+
+        }
         
+        //constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
+        //Declaramos la url que vamos a usar para el GET
+
+//Declaramos la información a enviar
+//Agregamos un botón con jQuery
+//Escuchamos el evento click del botón agregado
