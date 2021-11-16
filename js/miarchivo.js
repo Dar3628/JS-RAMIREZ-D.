@@ -47,7 +47,7 @@
                 this.codigo = codigo; // generar
             }
         }
-        const URLReservas = "json/";
+        const URLReservas = "json/reservas.json";
 
         // let guardarHuesped = function(){
         //     reserva.huespedes.push(huespedAguardar);
@@ -299,8 +299,8 @@
                 $.post(URLReservas, infoPost ,(respuesta, estado) => {
                     if(estado === "success"){
                         $("body").prepend(`<div>
-            Guardado:${respuesta.nombre}
-            </div>`);
+                        Guardado:${respuesta.nombre}
+                        </div>`);
                     }  
                 });
             });
