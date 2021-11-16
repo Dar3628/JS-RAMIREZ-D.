@@ -9,6 +9,8 @@
         let numCuotas = 0;
         let conIva = 0.0;
         let conInteresTarjetaCuota = 0.0;
+        let diastranscurridos = 0;
+        let fecha1 = Date.now();
         
         
         //habitaciones de mi hotel
@@ -25,6 +27,30 @@
         }
         
         const URL = "json/habitaciones.json";
+        class huesped {
+            constructor(dni, capacidad, disponibles, precio) {
+                this.dni  = tipo.toUpperCase();
+                this.capacidad  = parseInt(capacidad);
+                this.disponibles  = parseInt(disponibles);
+                this.precio  = parseFloat (precio);
+                this.ocupada = false;
+            }
+        }
+        const URLhuespedes = "json/huespedes.json";
+        class reserva {
+            constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
+                this.huespedes  = [];
+                this.habitacion  = habitacionAsignada;
+                this.fechaCheckIn  = fecha1; // ver que es variable local de la funcion Calcular; 
+                this.fechaCheckOut  = diastranscurridos;
+                this.codigo = 0; // generar
+            }
+        }
+        const URLReservas = "json/reservas.json";
+
+        // let guardarHuesped = function(){
+        //     reserva.huespedes.push(huespedAguardar);
+        // }
 
     
 
@@ -60,18 +86,23 @@
             console.log(estado);
             let habAsignadaSi = false;
             for( let habitAux of respuesta){
-                if (habitAux.capacidad == numPersonas){
-                //habitacionAsignada = habitAux;
-                
+                if (habitAux.capacidad == numPersonas){                
                 habitacionAsignada = new habitacion(habitAux.tipo, habitAux.capacidad, habitAux.disponibles, habitAux.precio);
                 habAsignadaSi = true;
                 }
             }
-            
+            if(habAsignadaSi){
+                // console.log('habitacionAsignada ' + habitacionAsignada.precio);
+                // agregarIva();        
+                // cuantoInteres(); 
+                // calculaInteresTarjetaCuota();
+                // imprimirTotal();
+            }
         }).done(function() {
             agregarIva();        
             cuantoInteres(); 
             calculaInteresTarjetaCuota();
+            imprimirTotal();
           })
     }
     
@@ -129,7 +160,25 @@
             $("#seccion2a").queue(function(next){
                 $(this).css("order","2");
                 $(this).css("position","relative");
-            })               
+            })
+                        
+        })
+            
+                                                                                // ver
+
+
+        $("#btn-continuar1").click(function(){
+            $("#accordionFlushExample").ready(function(){
+                if(numPersonas === 2){
+                    $("#huesped2").css("display","block")
+                } else if(numPersonas === 3){
+                    ($("#huesped2") && $("#huesped3")).css("display","block")
+                } else if(numPersonas === 4){
+                    ($("#huesped2") && $("#huesped3") && $("#huesped4")).css("display","block")
+                } else if(numPersonas === 5){
+                    ($("#huesped2") && $("#huesped3") && $("#huesped4") && $("#huesped5")).css("display","block")
+                } else (($("#huesped2") || $("#huesped3") || $("#huesped4") || $("#huesped5")).css("display","none"))
+            })
         })
 
         $("#btn-continuar2").click(function(){
@@ -152,9 +201,13 @@
         // })
        
 
-        $("#book").click(function(){
+        let imprimirTotal = function(){
+            console.log('funcion total :' + numPersonas);
+            console.log('conInteresTarjetaCuota total :' + conInteresTarjetaCuota);
+            console.log('diastranscurridos total :' + diastranscurridos);
+
             $("#total").empty();
-            $("#total").append(" $ " + Math.trunc(numPersonas * conInteresTarjetaCuota))
+            $("#total").append(" $ " + Math.trunc(numPersonas * conInteresTarjetaCuota * diastranscurridos))
                        
                         .queue(function(next){
                             $(this).animate({"font-size": "1.6rem"},500);
@@ -172,7 +225,7 @@
                             next();
                         })
                         
-        })
+        }
        
 
         $("#book").click(function(){
@@ -204,30 +257,32 @@
             $("#divCuotas").show();
         })
 
-        let fecha1 = new Date(document.getElementById('check-in'));
-        let fecha2 = new Date(document.getElementById("check-out"));
-        const milisegundosDia = 24*60*60*1000;
-        let milisegundosTranscurridos = Math.abs(fecha1.getTime() - fecha2.getTime());
-        let diastranscurridos = Math.round(milisegundosTranscurridos/milisegundosDia);
-
-        console.log(fecha1);
-        console.log(fecha2);
-        console.log(milisegundosDia);
-        console.log(milisegundosTranscurridos);
-        console.log(diastranscurridos);
-
+        
 
             
         let calcular = () => {
+            fecha1 = new Date(document.getElementById('check-in').value);
+            let fecha2 = new Date(document.getElementById("check-out").value);
+            const milisegundosDia = 24*60*60*1000;
+            let milisegundosTranscurridos = Math.abs(fecha1.getTime() - fecha2.getTime());
+            diastranscurridos = Math.round(milisegundosTranscurridos/milisegundosDia);
+    
+            console.log(fecha1);
+            console.log(fecha2);
+            console.log(milisegundosDia);
+            console.log('milisegs : ' + milisegundosTranscurridos);
+            console.log(diastranscurridos);
+    
         let opcion = document.getElementById("cantPersonas");
         numPersonas = opcion.options[opcion.selectedIndex].text;
         let option2 = document.getElementById("cantCuotas");
         numCuotas = option2.options[option2.selectedIndex].text;
         //EJECUCION DE FUNCIONES
         asignarHabitacion();
-        agregarIva();        
-        cuantoInteres(); 
-        calculaInteresTarjetaCuota();
+        // agregarIva();        
+        // cuantoInteres(); 
+        // calculaInteresTarjetaCuota();
+        // imprimirTotal();
         
         }
 
