@@ -248,8 +248,8 @@
 
             
         let calcular = () => {
-            fecha1 = new Date(document.getElementById('check-in').value);
-            let fecha2 = new Date(document.getElementById("check-out").value);
+            let fecha1 = new Date(document.getElementById('check-in').value);
+            let fecha2 = new Date(document.getElementById('check-out').value);
             const milisegundosDia = 24*60*60*1000;
             let milisegundosTranscurridos = Math.abs(fecha1.getTime() - fecha2.getTime());
             diastranscurridos = Math.round(milisegundosTranscurridos/milisegundosDia);
@@ -274,74 +274,109 @@
         }
 
 
-        const URLhuespedes = "json/huespedes.json";
-        class reserva {
-            constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-                this.huespedes  = huespedes;
-                this.habitacion  = habitacion;
-                this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
-                this.fechaCheckOut  = fechaCheckOut;
-                this.codigo = codigo; // generar
-            }
-        }
-        const URLReservas = "json/reservas.json";
+//         const URLhuespedes = "json/huespedes.json";
+//         class reserva {
+//             constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
+//                 this.huespedes  = huespedes;
+//                 this.habitacion  = habitacion;
+//                 this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
+//                 this.fechaCheckOut  = fechaCheckOut;
+//                 this.codigo = codigo; // generar
+//             }
+//         }
+//         const URLReservas = "json/reservas.json";
 
-        // let guardarHuesped = function(){
-        //     reserva.huespedes.push(huespedAguardar);
-        // }
+//         // let guardarHuesped = function(){
+//         //     reserva.huespedes.push(huespedAguardar);
+//         // }
 
 
-        // $("#btn-reservar").click(function(){
-        //     guardarReserva();
-        // })
+//         // $("#btn-reservar").click(function(){
+//         //     guardarReserva();
+//         // })
 
-        const guardarReserva = () =>{
-            let habitacionAux = new habitacion("individual", 1, 4, 3700);
-            let reservaAux = new reserva(null, habitacionAux, Date.now(), Date.now(), "34576274");
-            const infoPost =  JSON.stringify(reservaAux);
-            $("#btn-reservar").click(() => { 
-                $.post(URLReservas, infoPost ,(respuesta, estado) => {
-                    if(estado === "success"){
-                        $("body").prepend(`<div>
-                        Guardado:${respuesta.nombre}
-                        </div>`);
-                    }  
-                });
-            });
+//         const guardarReserva = () =>{
+//             let habitacionAux = new habitacion("individual", 1, 4, 3700);
+//             let reservaAux = new reserva(null, habitacionAux, Date.now(), Date.now(), "34576274");
+//             const infoPost =  JSON.stringify(reservaAux);
+//             $("#btn-reservar").click(() => { 
+//                 $.post(URLReservas, infoPost ,(respuesta, estado) => {
+//                     if(estado === "success"){
+//                         $("body").prepend(`<div>
+//                         Guardado:${respuesta.nombre}
+//                         </div>`);
+//                     }  
+//                 });
+//             });
 
-        }
+//         }
         
-        //constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-        //Declaramos la url que vamos a usar para el GET
+//         //constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
+//         //Declaramos la url que vamos a usar para el GET
 
-//Declaramos la información a enviar
-//Agregamos un botón con jQuery
-//Escuchamos el evento click del botón agregado
+// //Declaramos la información a enviar
+// //Agregamos un botón con jQuery
+// //Escuchamos el evento click del botón agregado
 
-$("#btn-reservar").click(function(){
-        guardarReserva();
-    })
-//let guardarReserva = new Array();
+// $("#btn-reservar").click(function(){
+//         guardar_localStorage();
+//     })
     
 
-    function reservaAux(URLReservas) {
-        let huespedes = $('#apellido').val();
-        let habitacion = $('#cantPersonas').val();
-        let fechaCheckIn = $('#checkIn').val();
-        let fechaCheckOut = $('checkout').val();
-        let codigo = document.getElementById$('#dni').val();
+//     function guardar_localStorage() {
+//         // let huesped = $('#apellido').val();
+//         // let habitacion = $('#cantPersonas').val();
+//         // let fechaCheckIn = $('#checkIn').val();
+//         // let fechaCheckOut = $('checkout').val();
+//         // let codigo = document.getElementById('#dni').val();
 
 
-        jsonObject.push({
-            huespedes: morales,
-            habitacion: 3,
-            fechaCheckIn: 12/23/2021,
-            fechaCheckIn: 12/26/2021,
-            codigo: 34576274,
-        });
+//         let reserva = {
+//             huespedes: "morales",
+//             habitacion: 3,
+//             fechaCheckIn: "12/23/2021",
+//             fechaCheckIn: "12/26/2021",
+//             codigo: 34576274
+//         };
+    
 
-        console.log(jsonObject); //array de objetos
-        let jsonString = JSON.stringify(jsonObject); //convertirmos el array de objetos a un string con formato json
-        console.log(jsonString);
+//         let huespedes ="sosa"
 
+//         localStorage.setItem( "huespedes", huespedes)
+//         localStorage.setItem("reserva", JSON.stringify( reserva ) );
+
+//         // console.log(jsonObject); //array de objetos
+//         // let jsonString = JSON.stringify(jsonObject); //convertirmos el array de objetos a un string con formato json
+//         // console.log(jsonString);
+//     }
+    
+    var familia = [];
+        var habitacionTipo = [];
+        var fechaCheckIn = [];
+        var fechaCheckOut = [];
+        var codigo = [];
+
+    var elementoBotonRegistrar = document.querySelector("#btn-reservar");
+
+    elementoBotonRegistrar.addEventListener("click", nuevaReserva);
+
+    function nuevaReserva(){
+        var familia = $('#apellido').val();
+            habitacionTipo = $('#cantPersonas').val();
+            fechaCheckIn = $('#fechaCheckIn').val();
+            fechaCheckOut = $('#fechaCheckOut').val();
+            codigo = $('#dni').val();
+
+
+        familia.push(familia);
+        habitacionTipo.push(habitacionTipo);
+        fechaCheckIn.push('fechaCheckIn');
+        fechaCheckIn.push('fechaCheckOut');
+        codigo.push('codigo');
+
+        localStorage.setItem("familia_reservacion", JSON.stringify(familia));
+        localStorage.setItem("habitacionTipo_reservacion", JSON.stringify(habitacionTipo));
+        localStorage.setItem("fechaCheckIn_reservacion", JSON.stringify(fechaCheckIn));
+        localStorage.setItem("fechaCheckOut_reservacion", JSON.stringify(fechaCheckOut));
+        localStorage.setItem("codigo_reservacion", JSON.stringify(codigo));
     }
