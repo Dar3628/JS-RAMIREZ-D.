@@ -14,45 +14,13 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/pagos.css".css">
 
     </head>
     <body>
         <!-- Navigation-->
+        
         <nav class="navbar navbar-light bg-light fixed-top">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Home</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Home</h5>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a  class="btn navbar-brand" href="#encabezado">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a id="btn-simulador" class="btn navbar-brand" href="#seccion1">Simular costos por día</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a id="btn-reservar" class="btn navbar-brand" href="#seccion2">Concretar reserva</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="btn navbar-brand" href="#contactForm">contacto</a>
-                      </li>
-                  </ul>
-                  <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </nav>
-        <!-- <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container calcular-form">
                 <a class="navbar-brand" href="#encabezado">Home</a>
                 <a id="btn-simulador" class="btn navbar-brand" href="#encabezado">Simular costos por día</a>
@@ -60,7 +28,7 @@
                 <a class="btn navbar-brand" href="#encabezado">Quejas o sugerencias</a>
                 <a class="btn navbar-brand" href="#formularioContacto">contacto</a>
             </div>
-        </nav> -->
+        </nav>
         <!-- Masthead-->
         <header id="encabezado" class="masthead">
             <div class="container position-relative">
@@ -391,35 +359,49 @@
                 </div>
             </div>
         </section>
-        <!-- Testimonials-->
-        <!-- <section class="testimonials text-center bg-light">
-            <div class="container">
-                <h2 class="mb-5">What people are saying...</h2>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testionials-1.jpg" alt="..." />
-                            <h5>Margaret E.</h5>
-                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-                        </div>
+        <section ">
+            <div id="seccionPagos" class="dispNone">
+                <div class="pagos-tips">
+                    Payment card number: (4) VISA, (51 -> 55) MasterCard, (36-38-39) DinersClub, (34-37) American Express, (65) Discover, (5019) dankort
                     </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                            <h5>Fred S.</h5>
-                            <p class="font-weight-light mb-0">"This hotel is amazing. I've been using it to relax in a super nice resting place."</p>
+                    
+                    <div class="pagos-container">
+                        <div class="pagos-col1">
+                        <div class="pagos-card">
+                            <div class="pagos-front">
+                            <div class="pagos-type">
+                                <img class="pagos-img pagos-bankid"/>
+                            </div>
+                            <span class="pagos-chip"></span>
+                            <span class="pagos-card_number">&#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; </span>
+                            <div class="pagos-date"><span class="pagos-date_value">MM / YYYY</span></div>
+                            <span class="pagos-fullname">FULL NAME</span>
+                            </div>
+                            <div class="pagos-back">
+                            <div class="pagos-magnetic"></div>
+                            <div class="pagos-bar"></div>
+                            <span class="pagos-seccode">&#x25CF;&#x25CF;&#x25CF;</span>
+                            <span class="pagos-chip"></span><span class="pagos-disclaimer">This card is property of Random Bank of Random corporation. <br> If found please return to Random Bank of Random corporation - 21968 Paris, Verdi Street, 34 </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                            <h5>Sarah W.</h5>
-                            <p class="font-weight-light mb-0">Thank you for making me forget the world, and get a real rest.</p>
+                        </div>
+                        <div class="pagos-col2">
+                        <label class="pagos-label">INGRESE LOS DIECISEIS NUMEROS DE SU TARJETA:</label>
+                        <input class="pagos-input pagos-number" type="text" ng-model="ncard" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                        <label class="pagos-label">INGRESE SU NOMBRE, TAL COMO FIGURA EN LA TARJETA:</label>
+                        <input class="pagos-input pagos-inputname" type="text" placeholder=""/>
+                        <label class="pagos-label">FECHA DE VENCIMIENTO</label>
+                        <input class="pagos-input pagos-expire" type="text" placeholder="MES/ AÑO"/>
+                        <label class="pagos-label"  >CODIGO DE SEGURIDAD</label>
+                        <input class="pagos-input pagos-ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                        <button id="btn-reservar" class="pagos-buy"> Pagar </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+
+        </section>
+        
         <section class="features-icons bg-light text-center">
             <div class="container">
                 <div class="row">
@@ -446,6 +428,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Call to Action-->
         <div id="formularioContacto" class="container px-5 my-5">
             <div class="row justify-content-center">
@@ -551,6 +534,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/miarchivo.js"></script>
+        <script src="js/pagos.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
