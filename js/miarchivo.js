@@ -219,115 +219,111 @@
             $("#resultados").slideDown(700);
         })
 
-        
         $('#book').keypress(function (e) {
             if (e.which == 13) {
               $('input').click();  
             }
           });
-          
-          $("#tipoPago").click(function() {
+ 
+        $("#tipoPago").click(function() {
              if($("#tarjetaCredito").is(":checked")){
                 $("#divCuotas").slideDown();
                 $("#divCuotaHijo").slideDown(1000);
-            } else{
+             } else{
                 if($("#tarjetaDebito").is(":checked") || $("#efectivo").is(":checked")){
                     $("#divCuotas").slideUp(1000)
                     $("#divCuotaHijo").slideUp(1000)                                   
                     $("#cantCuotas").val("1 cuota (sin interes)");
                 }
-            }
+             }
         })
         
-        
+                
         const tarjetaCredito = document.getElementById("tipoPago");
         $("#tarjetaCredito").click(function(){
             $("#divCuotas").show();
         })
-        
-        
 
         
+
+            
         let calcular = () => {
             let fecha1 = new Date(document.getElementById('check-in').value);
             let fecha2 = new Date(document.getElementById('check-out').value);
             const milisegundosDia = 24*60*60*1000;
             let milisegundosTranscurridos = Math.abs(fecha1.getTime() - fecha2.getTime());
             diastranscurridos = Math.round(milisegundosTranscurridos/milisegundosDia);
-            
+    
             console.log(fecha1);
             console.log(fecha2);
             console.log(milisegundosDia);
             console.log('milisegs : ' + milisegundosTranscurridos);
             console.log(diastranscurridos);
-            
-            let opcion = document.getElementById("cantPersonas");
-            numPersonas = opcion.options[opcion.selectedIndex].text;
-            let option2 = document.getElementById("cantCuotas");
-            numCuotas = option2.options[option2.selectedIndex].text;
-            //EJECUCION DE FUNCIONES
-            asignarHabitacion();
-            // agregarIva();        
-            // cuantoInteres(); 
-            // calculaInteresTarjetaCuota();
-            // imprimirTotal();
-            
+    
+        let opcion = document.getElementById("cantPersonas");
+        numPersonas = opcion.options[opcion.selectedIndex].text;
+        let option2 = document.getElementById("cantCuotas");
+        numCuotas = option2.options[option2.selectedIndex].text;
+        //EJECUCION DE FUNCIONES
+        asignarHabitacion();
+        // agregarIva();        
+        // cuantoInteres(); 
+        // calculaInteresTarjetaCuota();
+        // imprimirTotal();
+        
         }
-        
-        
-        //         const URLhuespedes = "json/huespedes.json";
-        //         class reserva {
-            //             constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-                //                 this.huespedes  = huespedes;
-                //                 this.habitacion  = habitacion;
-                //                 this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
-                //                 this.fechaCheckOut  = fechaCheckOut;
-                //                 this.codigo = codigo; // generar
+
+
+//         const URLhuespedes = "json/huespedes.json";
+//         class reserva {
+//             constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
+//                 this.huespedes  = huespedes;
+//                 this.habitacion  = habitacion;
+//                 this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
+//                 this.fechaCheckOut  = fechaCheckOut;
+//                 this.codigo = codigo; // generar
 //             }
 //         }
 //         const URLReservas = "json/reservas.json";
 
 //         // let guardarHuesped = function(){
-    //         //     reserva.huespedes.push(huespedAguardar);
-    //         // }
-    
-    
-    //         // $("#btn-reservar").click(function(){
-        //         //     guardarReserva();
-        //         // })
+//         //     reserva.huespedes.push(huespedAguardar);
+//         // }
+
+
+//         // $("#btn-reservar").click(function(){
+//         //     guardarReserva();
+//         // })
+
+//         const guardarReserva = () =>{
+//             let habitacionAux = new habitacion("individual", 1, 4, 3700);
+//             let reservaAux = new reserva(null, habitacionAux, Date.now(), Date.now(), "34576274");
+//             const infoPost =  JSON.stringify(reservaAux);
+//             $("#btn-reservar").click(() => { 
+//                 $.post(URLReservas, infoPost ,(respuesta, estado) => {
+//                     if(estado === "success"){
+//                         $("body").prepend(`<div>
+//                         Guardado:${respuesta.nombre}
+//                         </div>`);
+//                     }  
+//                 });
+//             });
+
+//         }
         
-        //         const guardarReserva = () =>{
-            //             let habitacionAux = new habitacion("individual", 1, 4, 3700);
-            //             let reservaAux = new reserva(null, habitacionAux, Date.now(), Date.now(), "34576274");
-            //             const infoPost =  JSON.stringify(reservaAux);
-            //             $("#btn-reservar").click(() => { 
-                //                 $.post(URLReservas, infoPost ,(respuesta, estado) => {
-                    //                     if(estado === "success"){
-                        //                         $("body").prepend(`<div>
-                        //                         Guardado:${respuesta.nombre}
-                        //                         </div>`);
-                        //                     }  
-                        //                 });
-                        //             });
-                        
-                        //         }
-                        
-                        //         //constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-                            //         //Declaramos la url que vamos a usar para el GET
-                            
-                            // //Declaramos la información a enviar
-                            // //Agregamos un botón con jQuery
-                            // //Escuchamos el evento click del botón agregado
-                            
-                            // $("#btn-reservar").click(function(){
-                                //         guardar_localStorage();
-                                //     })
-                                
-                                
-                                //     function guardar_localStorage() {
-    $("#btn-datosPago").click(function(){
-        $("#seccionPagos").slideDown();
-    })
+//         //constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
+//         //Declaramos la url que vamos a usar para el GET
+
+// //Declaramos la información a enviar
+// //Agregamos un botón con jQuery
+// //Escuchamos el evento click del botón agregado
+
+// $("#btn-reservar").click(function(){
+//         guardar_localStorage();
+//     })
+    
+
+//     function guardar_localStorage() {
 //         // let huesped = $('#apellido').val();
 //         // let habitacion = $('#cantPersonas').val();
 //         // let fechaCheckIn = $('#checkIn').val();
@@ -355,20 +351,20 @@
 //     }
     
     var afamilia = [];
-        var ahabitacionTipo = [];
-        var afechaCheckIn = [];
-        var afechaCheckOut = [];
-        var acodigo = [];
-        var ahuespedes = [];
-        var ahuesped1 = [];
-        var ahuesped2 = [];
-        var ahuesped3 = [];
-        var ahuesped4 = [];
-        var ahuesped5 = [];
+    var ahabitacionTipo = [];
+    var afechaCheckIn = [];
+    var afechaCheckOut = [];
+    var acodigo = [];
+    var ahuespedes = [];
+    var ahuesped1 = [];
+    var ahuesped2 = [];
+    var ahuesped3 = [];
+    var ahuesped4 = [];
+    var ahuesped5 = [];
 
     var elementoBotonRegistrar = document.querySelector("#btn-reservar");
 
-    elementoBotonRegistrar.addEventListener("click", nuevaReserva);
+    elementoBotonRegistrar.addEventListener("click", {nuevaReserva});
 
     function nuevaReserva(){
         if(localStorage.getItem('familia_reservacion') != null){
@@ -379,6 +375,7 @@
         acodigo = JSON.parse(localStorage.getItem('codigo_reservacion'))
         ahuespedes = JSON.parse(localStorage.getItem('Huespedes'))
         }
+        
 
         var familia = $('#apellido1').val();
             habitacionTipo = $('#cantPersonas').val();
