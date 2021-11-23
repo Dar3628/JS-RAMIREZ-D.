@@ -351,31 +351,30 @@
 //     }
     
     var afamilia = [];
-    var ahabitacionTipo = [];
-    var afechaCheckIn = [];
-    var afechaCheckOut = [];
-    var acodigo = [];
-    var ahuespedes = [];
-    var ahuesped1 = [];
-    var ahuesped2 = [];
-    var ahuesped3 = [];
-    var ahuesped4 = [];
-    var ahuesped5 = [];
+        var ahabitacionTipo = [];
+        var afechaCheckIn = [];
+        var afechaCheckOut = [];
+        var acodigo = [];
+        var ahuespedes = [];
+        var ahuesped1 = [];
+        var ahuesped2 = [];
+        var ahuesped3 = [];
+        var ahuesped4 = [];
+        var ahuesped5 = [];
 
     var elementoBotonRegistrar = document.querySelector("#btn-reservar");
 
-    elementoBotonRegistrar.addEventListener("click", {nuevaReserva});
+    elementoBotonRegistrar.addEventListener("click", nuevaReserva);
 
     function nuevaReserva(){
-        if(localStorage.getItem('familia_reservacion') != null){
-        afamilia = JSON.parse(localStorage.getItem('familia_reservacion'));
-        ahabitacionTipo = JSON.parse(localStorage.getItem('habitacionTipo_reservacion'));
-        afechaCheckIn = JSON.parse(localStorage.getItem('fechaCheckIn_reservacion'))
-        afechaCheckOut = JSON.parse(localStorage.getItem('fechaCheckOut_reservacion'))
-        acodigo = JSON.parse(localStorage.getItem('codigo_reservacion'))
+        if(localStorage.getItem('familia') != null){
+        afamilia = JSON.parse(localStorage.getItem('familia'));
+        ahabitacionTipo = JSON.parse(localStorage.getItem('habitacionTipo'));
+        afechaCheckIn = JSON.parse(localStorage.getItem('fechaCheckIn'))
+        afechaCheckOut = JSON.parse(localStorage.getItem('fechaCheckOut'))
+        acodigo = JSON.parse(localStorage.getItem('codigo'))
         ahuespedes = JSON.parse(localStorage.getItem('Huespedes'))
         }
-        
 
         var familia = $('#apellido1').val();
             habitacionTipo = $('#cantPersonas').val();
@@ -457,11 +456,11 @@
         ahuespedes.push(ahuesped5);
         }
 
-        localStorage.setItem("familia_reservacion", JSON.stringify(afamilia));
-        localStorage.setItem("habitacionTipo_reservacion", JSON.stringify(ahabitacionTipo));
-        localStorage.setItem("fechaCheckIn_reservacion", JSON.stringify(afechaCheckIn));
-        localStorage.setItem("fechaCheckOut_reservacion", JSON.stringify(afechaCheckOut));
-        localStorage.setItem("codigo_reservacion", JSON.stringify(acodigo));
+        localStorage.setItem("familia", JSON.stringify(afamilia));
+        localStorage.setItem("habitacionTipo", JSON.stringify(ahabitacionTipo));
+        localStorage.setItem("fechaCheckIn", JSON.stringify(afechaCheckIn));
+        localStorage.setItem("fechaCheckOut", JSON.stringify(afechaCheckOut));
+        localStorage.setItem("codigo", JSON.stringify(acodigo));
         localStorage.setItem("Huespedes", JSON.stringify(ahuespedes));
         // var i = 0;
         // for(let cod in codigo ){
