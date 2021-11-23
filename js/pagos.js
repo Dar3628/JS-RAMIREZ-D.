@@ -110,13 +110,14 @@ $(function(){
     });
     
     //Security code Input
+   
     $(".pagos-ccv").focus(function(){
       $(".pagos-card").css("transform", "rotatey(180deg)");
       $(".pagos-seccode").css("color", "white");
     }).keyup(function(){
       $(".pagos-seccode").text($(this).val());
       if($(this).val().length === 0){
-        $(".pagos-seccode").html("&#x25CF;&#x25CF;&#x25CF;");
+        $(".seccode").html("&#x25CF;&#x25CF;&#x25CF;");
       }
     }).focusout(function() {
         $(".pagos-card").css("transform", "rotatey(0deg)");
