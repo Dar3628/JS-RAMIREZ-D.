@@ -286,8 +286,7 @@
         var ahuesped4 = [];
         var ahuesped5 = [];
 
-    var elementoBotonRegistrar = document.querySelector("#btn-reservar");
-
+    var elementoBotonRegistrar = document.querySelector("#btn-pagado");
     elementoBotonRegistrar.addEventListener("click", nuevaReserva);
 
     function nuevaReserva(){
@@ -396,3 +395,53 @@
         // }
 
     }
+
+    // function mostrarReserva(){
+    //    var tablaReserva = $('#tablaReserva');
+       
+    //    tablaReserva.innerHTML = '';
+    //    var codigo =JSON.parse(localStorage.getItem('codigo'))
+    //    var titular =JSON.parse(localStorage.getItem('familia'))
+    //    var plazas =JSON.parse(localStorage.getItem('habitacionTipo'))
+    //    var fechaInicio =JSON.parse(localStorage.getItem('fechaCheckIn'))
+    //    var fechaFin =JSON.parse(localStorage.getItem('fechaCheckOut'))
+
+    //    function showItemsByKey() {
+    //     var typeofKey = null;
+    //     for (var key in localStorage) {
+    //         typeofKey = (typeof localStorage[codigo]);
+    //         console.log(key, typeofKey);
+    //         }
+    //     }
+
+    //    //for(var i in codigo[]) i== codigo; print()){
+    //        var fila = document.createElement('tr');
+
+    //        var celdacodigo= document.createElement('td');
+    //        var celdaTitular = document.createElement('td');
+    //        var celdaPlazas = document.createElement('td');
+    //        var celdaFechaInicio = document.createElement('td');
+    //        var celdaFechaFin = document.createElement('td');
+
+    //        nodoTextoCodigo = document.createTextNode(codigo[i]),
+    //        nodoTextoTitular = document.createTextNode(titular[i]),
+    //        nodoTextoPlazas = document.createTextNode(plazas[i]),
+    //        nodoTextoFechaInicio = document.createTextNode(fechaInicio[i]),
+    //        nodoTextoFechaFin = document.createTextNode(fechaFin[i])
+
+    //         celdacodigo.appendChild(nodoTextoCodigo)
+    //         celdaTitular.appendChild(nodoTextoTitular)
+    //         celdaPlazas.appendChild(nodoTextoPlazas)
+    //         celdaFechaInicio.appendChild(nodoTextoFechaInicio)
+    //         celdaFechaFin.appendChild(nodoTextoFechaFin)
+
+    //         fila.appendChild(celdacodigo);
+    //         fila.appendChild(celdaTitular);
+    //         fila.appendChild(celdaPlazas);
+    //         fila.appendChild(celdaFechaInicio);
+    //         fila.appendChild(celdaFechaFin);
+
+    //         tablaReserva.appendChild(fila);
+
+    //    //}
+    // }

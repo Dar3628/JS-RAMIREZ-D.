@@ -57,8 +57,8 @@
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container calcular-form">
                 <a class="navbar-brand" href="#encabezado">Home</a>
-                <a id="btn-simulador" class="btn navbar-brand" href="#encabezado">Simular costos por día</a>
-                <a id="btn-reservar" class="btn navbar-brand" href="#simulador">Concretar reserva</a>
+                <a id="btn-simulador" class="btn navbar-brand" href="#encabezado">simular mis costos de alojamiento</a>
+                <!-- <a id="btn-reservar" class="btn navbar-brand" href="#simulador">Concretar reserva</a> -->
                 <a class="btn navbar-brand" href="#formularioContacto">contacto</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -69,15 +69,25 @@
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <h6>ingresa tu codigo de reserva</h6>
-                        </li>
+                      <div class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <h6 class="nav-item">ingresa tu codigo de reserva</h6>
+                      </div>
                         
                       <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                       </form>
+                      <div id="tablaReserva">
+
+                        <!-- aca va a ir la tabla con datos de reserva -->
+
+
+
+
+
+
+                      </div>
+
                     </div>
                   </div>
             </div>
@@ -417,7 +427,7 @@
                 <div id="datosTarjeta" class="pagos-container">
                     <div class="pagos-col1">
                         <div class="pagos-card">
-                            <div class="pagos-front">
+                            <div class="pagos-front gradiente">
                             <div class="pagos-type">
                                 <img class="pagos-img pagos-bankid"/>
                             </div>
@@ -430,7 +440,7 @@
                                 FULL NAME
                             </span>
                             </div>
-                            <div class="pagos-back">
+                            <div class="pagos-back gradiente">
                                 <div class="pagos-magnetic"></div>
                                 <div class="pagos-bar"></div>
                                 <span class="pagos-seccode">&#x25CF;&#x25CF;&#x25CF;</span>
@@ -440,6 +450,7 @@
                                     >This card is property of Random Bank of Random corporation. <br> If found please return to Random Bank of Random corporation - 21968 Paris, Verdi Street, 34 
                                 </span>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="pagos-col2">
@@ -452,8 +463,10 @@
                         <label class="pagos-label"  >CODIGO DE SEGURIDAD</label>
                         <input class="pagos-input pagos-ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
                         <div class="container col-xl-4 col-sm-4">
-                            <a href=""><button id="btn-pagado" type="button" class="btn btn-success btn-sm my-3 transicion">Pagar</button></a>
-                        </div>                    </div>
+                            <a href=""><button id="btn-pagado" type="button" class="btn btn-success   transicion">Pagar</button></a>
+                            <a href=""><button id="reiniciar" type="button" class="btn btn-success  transicion">Cancelar</button></a>
+                        </div>                    
+                    </div>
                 </div>
             </div>        
 
@@ -528,7 +541,7 @@
           
                       <!-- Name Input -->
                       <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                        <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" required />
                         <label for="name">Name</label>
                         <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
                       </div>
