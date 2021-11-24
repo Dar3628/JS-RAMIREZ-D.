@@ -4,11 +4,14 @@
 
 
 
-.pagos-body {
-  font-family: "Roboto", sans-serif;
+.pagos-body{
+  font-family: 'Roboto', sans-serif;
+  --card-color: #a9b4d3;
+  --text-color: #e1e1e1;
+  margin-top: 2rem;
 }
 
-.pagos-tips {
+.pagos-tips{
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -19,7 +22,8 @@
   padding: 2px 15px;
 }
 
-.pagos-container {
+.pagos-container{
+  display: flex;
   flex-direction: row;
   align-items: center;
   margin: auto;
@@ -28,22 +32,22 @@
   left: 0;
   right: 0;
   width: 680px;
-
-  .pagos-col1 {
+  
+  .pagos-col1{
     perspective: 1000;
     transform-style: preserve-3d;
-    .pagos-card {
+    .pagos-card{
       position: relative;
       width: 420px;
       height: 250px;
       margin-bottom: 85px;
-      margin-right: 30px;
+      margin-right: 10px;
       border-radius: 17px;
-      box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 20px -5px rgba(0,0,0,0.1);
       transition: all 1s;
       transform-style: preserve-3d;
-      .pagos-front {
-        position: relative;
+      .pagos-front{
+        position: absolute;
         background: var(--card-color);
         border-radius: 17px;
         padding: 50px;
@@ -55,34 +59,28 @@
         z-index: 50;
         background-image: repeating-linear-gradient(
             45deg,
-            rgba(255, 255, 255, 0) 1px,
-            rgba(255, 255, 255, 0.03) 2px,
-            rgba(255, 255, 255, 0.04) 3px,
+            rgba(255, 255, 255, 0) 1px, 
+            rgba(255, 255, 255, 0.03) 2px, 
+            rgba(255, 255, 255, 0.04) 3px, 
             rgba(255, 255, 255, 0.05) 4px
-          ),
-          -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 40%, rgba(
-                  255,
-                  255,
-                  255,
-                  0.2
-                )
-                70%, rgba(255, 255, 255, 0) 90%);
+        ), 
+            -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
         backface-visibility: hidden;
-        .pagos-type {
-          position: relative;
+        .pagos-type{
+          position: absolute;
           width: 75px;
           height: 45px;
           top: 20px;
           right: 20px;
-          .pagos-img {
+          .pagos-img{
             width: 100%;
             float: right;
           }
         }
-        .pagos-card_number {
+        .pagos-card_number{
           position: absolute;
           font-size: 26px;
           font-weight: 500;
@@ -92,7 +90,7 @@
           word-spacing: 3px;
           transition: color 0.5s;
         }
-        .pagos-date {
+        .pagos-date{
           position: absolute;
           bottom: 40px;
           right: 55px;
@@ -100,7 +98,7 @@
           height: 35px;
           color: var(--text-color);
           transition: color 0.5s;
-          .pagos-date_value {
+          .pagos-date_value{
             font-size: 12px;
             position: absolute;
             margin-left: 22px;
@@ -109,15 +107,15 @@
             font-weight: 500;
             transition: color 0.5s;
           }
-          &:after {
-            content: "MONTH / YEAR";
+          &:after{
+            content: 'MONTH / YEAR';
             position: absolute;
             display: block;
             font-size: 7px;
             margin-left: 20px;
           }
-          &:before {
-            content: "valid \a thru";
+          &:before{
+            content: 'valid \a thru';
             position: absolute;
             display: block;
             font-size: 8px;
@@ -125,39 +123,39 @@
             margin-top: 8px;
           }
         }
-        .pagos-fullname {
+        .pagos-fullname{
           position: absolute;
           font-size: 20px;
           bottom: 40px;
           color: var(--text-color);
           transition: color 0.5s;
         }
-      }
-      .pagos-back {
+      }    
+      .pagos-back{
         position: absolute;
         width: 100%;
         border-radius: 17px;
         height: 100%;
         background: var(--card-color);
         transform: rotateY(180deg);
-        .pagos-magnetic {
+        .pagos-magnetic{
           position: absolute;
           width: 100%;
           height: 50px;
-          background: rgba(0, 0, 0, 0.7);
+          background: rgba(0,0,0,0.7);
           margin-top: 25px;
         }
-
-        .pagos-bar {
+        
+        .pagos-bar{
           position: absolute;
           width: 80%;
           height: 37px;
-          background: rgba(255, 255, 255, 0.7);
+          background: rgba(255,255,255,0.7);
           left: 10px;
           margin-top: 100px;
         }
-
-        .pagos-seccode {
+        
+        .pagos-seccode{
           font-size: 13px;
           color: var(--text-color);
           font-weight: 500;
@@ -165,13 +163,13 @@
           top: 100px;
           right: 40px;
         }
-
-        .pagos-chip {
+        
+        .pagos-chip{
           bottom: 45px;
           left: 10px;
         }
-
-        .pagos-disclaimer {
+        
+        .pagos-disclaimer{
           position: absolute;
           width: 65%;
           left: 80px;
@@ -182,42 +180,42 @@
       }
     }
   }
-
-  .pagos-col2 {
-    pagos-input {
+  
+  .pagos-col2{
+    input{
       display: block;
-      width: 260px;
+      width: 460px;
       height: 30px;
       padding-left: 10px;
       padding-top: 3px;
       padding-bottom: 3px;
       margin: 7px;
-      font-size: 17px;
+      font-size: 12px;
       border-radius: 20px;
-      background: rgba(42, 55, 114, 0);
+      background: rgba(0,0,0,0.05);
       border: none;
       transition: background 0.5s;
-      &:focus {
+      &:focus{
         outline-width: 0;
-        background: rgba(23, 73, 131, 0.15);
+        background: rgba(31,134,252, 0.15);
         transition: background 0.5s;
       }
     }
     .pagos-inputname{
-    text-transform: uppercase;
-    }
-
-    pagos-label {
+        text-transform: uppercase;
+        }
+    
+    pagos-label{
       padding-left: 8px;
-      font-size: 15px;
-      color: rgb(180, 46, 46);
+      font-size: 12px;
+      color: #444;
     }
-
-    .pagos-ccv {
+    
+    .pagos-ccv{
       width: 40%;
     }
-
-    .pagos-buy {
+    
+    .pagos-buy{
       width: 260px;
       height: 50px;
       position: relative;
@@ -225,30 +223,31 @@
       margin: 20px auto;
       border-radius: 10px;
       border: none;
-      background: #045061;
+      background: #42C2DF;
       color: white;
       font-size: 20px;
       transition: background 0.4s;
       cursor: pointer;
-      i {
+      i{
         font-size: 20px;
       }
-      &:hover {
-        background: #3594a9;
+      &:hover{
+        background: #3594A9;
         transition: background 0.4s;
       }
     }
   }
+  
 }
 
-.pagos-chip {
+.pagos-chip{
   position: absolute;
   width: 55px;
   height: 40px;
-  background: rgb(243, 241, 241);
+  background: rgb(253, 249, 219);
   border-radius: 7px;
-  &:after {
-    content: "";
+  &:after{
+    content: '';
     display: block;
     width: 35px;
     height: 25px;
@@ -257,6 +256,6 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    background: rgba(248, 212, 4, 0.397);
+    background: rgb(250, 227, 50);;
   }
 }

@@ -136,9 +136,10 @@
             $("#seccion2b").hide(2000);
             $("#seccion2c").show(4000);
             $("#seccion2a").queue(function(next){
-                $(this).css("order","2");
-                $(this).css("position","relative");
+            $(this).css("order","2");
+            $(this).css("position","relative");
             })
+                
                 
         })
             
@@ -244,7 +245,9 @@
             $("#divCuotas").show();
         })
 
-        
+        $("#btn-datosPago").click(function(){
+            $("#seccionTarjeta").show(2000);
+        })
 
             
         let calcular = () => {
@@ -266,89 +269,10 @@
         numCuotas = option2.options[option2.selectedIndex].text;
         //EJECUCION DE FUNCIONES
         asignarHabitacion();
-        // agregarIva();        
-        // cuantoInteres(); 
-        // calculaInteresTarjetaCuota();
-        // imprimirTotal();
+   
         
         }
 
-
-//         const URLhuespedes = "json/huespedes.json";
-//         class reserva {
-//             constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-//                 this.huespedes  = huespedes;
-//                 this.habitacion  = habitacion;
-//                 this.fechaCheckIn  = fechaCheckIn; // ver que es variable local de la funcion Calcular; 
-//                 this.fechaCheckOut  = fechaCheckOut;
-//                 this.codigo = codigo; // generar
-//             }
-//         }
-//         const URLReservas = "json/reservas.json";
-
-//         // let guardarHuesped = function(){
-//         //     reserva.huespedes.push(huespedAguardar);
-//         // }
-
-
-//         // $("#btn-reservar").click(function(){
-//         //     guardarReserva();
-//         // })
-
-//         const guardarReserva = () =>{
-//             let habitacionAux = new habitacion("individual", 1, 4, 3700);
-//             let reservaAux = new reserva(null, habitacionAux, Date.now(), Date.now(), "34576274");
-//             const infoPost =  JSON.stringify(reservaAux);
-//             $("#btn-reservar").click(() => { 
-//                 $.post(URLReservas, infoPost ,(respuesta, estado) => {
-//                     if(estado === "success"){
-//                         $("body").prepend(`<div>
-//                         Guardado:${respuesta.nombre}
-//                         </div>`);
-//                     }  
-//                 });
-//             });
-
-//         }
-        
-//         //constructor(huespedes, habitacion, fechaCheckIn, fechaCheckOut, codigo) {
-//         //Declaramos la url que vamos a usar para el GET
-
-// //Declaramos la información a enviar
-// //Agregamos un botón con jQuery
-// //Escuchamos el evento click del botón agregado
-
-// $("#btn-reservar").click(function(){
-//         guardar_localStorage();
-//     })
-    
-
-//     function guardar_localStorage() {
-//         // let huesped = $('#apellido').val();
-//         // let habitacion = $('#cantPersonas').val();
-//         // let fechaCheckIn = $('#checkIn').val();
-//         // let fechaCheckOut = $('checkout').val();
-//         // let codigo = document.getElementById('#dni').val();
-
-
-//         let reserva = {
-//             huespedes: "morales",
-//             habitacion: 3,
-//             fechaCheckIn: "12/23/2021",
-//             fechaCheckIn: "12/26/2021",
-//             codigo: 34576274
-//         };
-    
-
-//         let huespedes ="sosa"
-
-//         localStorage.setItem( "huespedes", huespedes)
-//         localStorage.setItem("reserva", JSON.stringify( reserva ) );
-
-//         // console.log(jsonObject); //array de objetos
-//         // let jsonString = JSON.stringify(jsonObject); //convertirmos el array de objetos a un string con formato json
-//         // console.log(jsonString);
-//     }
     
     var afamilia = [];
         var ahabitacionTipo = [];
