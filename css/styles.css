@@ -2997,7 +2997,7 @@ textarea.form-control-lg {
   border: 1px solid transparent;
   margin-bottom: 1rem;
   padding: 0.5em;
-  width: 110px;
+  width: 150px;
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

@@ -78,11 +78,7 @@
                 }
             }
             if(habAsignadaSi){
-                // console.log('habitacionAsignada ' + habitacionAsignada.precio);
-                // agregarIva();        
-                // cuantoInteres(); 
-                // calculaInteresTarjetaCuota();
-                // imprimirTotal();
+                
             }
         }).done(function() {
             agregarIva();        
@@ -189,13 +185,6 @@
             return (conInteresTarjetaCuota = conIva * interesTarjetaCuota);
         }
 
-        
-
-        // $("#book").click(function(){
-        //     $("#unitario").empty();
-        //     $("#unitario").append("El precio final por persona es de $ " + Math.trunc(conInteresTarjetaCuota));
-        // })
-       
 
         let imprimirTotal = function(){
             console.log('funcion total :' + numPersonas);
@@ -287,12 +276,7 @@
         var afechaCheckIn = [];
         var afechaCheckOut = [];
         var acodigo = [];
-        // var ahuespedes = [];
-        // var ahuesped1 = [];
-        // var ahuesped2 = [];
-        // var ahuesped3 = [];
-        // var ahuesped4 = [];
-        // var ahuesped5 = [];
+        
        
         var areservas = [];
     
@@ -303,12 +287,7 @@
         function nuevaReserva(){
             if(localStorage.getItem('areservas') != null){
             areservas = JSON.parse(localStorage.getItem('areservas'));
-            // afamilia = JSON.parse(localStorage.getItem('familia_reservacion'));
-            // ahabitacionTipo = JSON.parse(localStorage.getItem('habitacionTipo_reservacion'));
-            // afechaCheckIn = JSON.parse(localStorage.getItem('fechaCheckIn_reservacion'))
-            // afechaCheckOut = JSON.parse(localStorage.getItem('fechaCheckOut_reservacion'))
-            // acodigo = JSON.parse(localStorage.getItem('codigo_reservacion'))
-            // ahuespedes = JSON.parse(localStorage.getItem('Huespedes'))
+            
             }
             
             var familia = $('#apellido1').val();
@@ -318,13 +297,7 @@
             var codigo = $('#dni1').val();
             var ahuespedes = [];
     
-            // YA NO NECESITO QUE SEAN ARRAYS PORQUE ES UN SOLO VALOR POR RESERVA
-            // afamilia.push(familia);
-            // ahabitacionTipo.push(habitacionTipo);
-            // afechaCheckIn.push(fechaCheckIn);
-            // afechaCheckOut.push(fechaCheckOut);
-            // acodigo.push(codigo);
-    
+                
             var name1 = $('#name1').val();
             var apellido1 = $('#apellido1').val();
             var edad1 = $('#edad1').val();
@@ -356,80 +329,15 @@
             var ahuesped5 = new huesped(name5,apellido5,edad5,telefono5);
     
     
-            //guardo todos para despues cortar el array y dejar solo los que necesito
             ahuespedes.push(ahuesped1);
             ahuespedes.push(ahuesped2);
             ahuespedes.push(ahuesped3);
             ahuespedes.push(ahuesped4);
             ahuespedes.push(ahuesped5);
     
-            ahuespedes = ahuespedes.splice(0,parseInt(habitacionTipo)); ///corta el array desde 0 a habitacionTipo y lo guarda en el mismo array
+            ahuespedes = ahuespedes.splice(0,parseInt(habitacionTipo)); 
     
-    /**
-            if(habitacionTipo >= 1){
-            // ahuesped1.push(name1);
-            // ahuesped1.push(apellido1);
-            // ahuesped1.push(edad1);
-            // ahuesped1.push(telefono1);
-            // ahuespedes.push(ahuesped1);
-            // var ahuesped1 = (name1,apellido1,edad1,telefono1);
-            ahuespedes.push(ahuesped1);
-            
-            }
     
-            if(habitacionTipo >= 2){
-            // ahuesped2.push(name2);
-            // ahuesped2.push(apellido2);
-            // ahuesped2.push(edad2);
-            // ahuesped2.push(telefono2);
-            // ahuespedes.push(ahuesped2);   
-            // var ahuesped2 = (name2,apellido2,edad2,telefono2);
-            ahuespedes.push(ahuesped2);     
-            }
-    
-            if(habitacionTipo >= 3){
-            // ahuesped3.push(name3);
-            // ahuesped3.push(apellido3);
-            // ahuesped3.push(edad3);
-            // ahuesped3.push(telefono3);
-            // ahuespedes.push(ahuesped3);  
-            // var ahuesped3 = (name3,apellido3,edad3,telefono3); 
-            ahuespedes.push(ahuesped3);     
-            }
-    
-            if(habitacionTipo >= 4){
-            // ahuesped4.push(name4);
-            // ahuesped4.push(apellido4);
-            // ahuesped4.push(edad4);
-            // ahuesped4.push(telefono4);
-            // ahuespedes.push(ahuesped4); 
-            // var ahuesped4 = (name4,apellido4,edad4,telefono4);    
-            ahuespedes.push(ahuesped4);  
-            }
-            
-            if(habitacionTipo >= 5){
-            // ahuesped5.push(name5);
-            // ahuesped5.push(apellido5);
-            // ahuesped5.push(edad5);
-            // ahuesped5.push(telefono5);
-            // ahuespedes.push(ahuesped5);
-            // var ahuesped5 = (name5,apellido5,edad5,telefono5);
-            ahuespedes.push(ahuesped5);
-            }
-    */         
-    
-            // areserva.push(afamilia);
-            // areserva.push(ahabitacionTipo);
-            // areserva.push(afechaCheckIn);
-            // areserva.push(afechaCheckOut);
-            // areserva.push(acodigo);
-            // areserva.push(ahuespedes);
-            // localStorage.setItem("familia_reservacion", JSON.stringify(afamilia));
-            // localStorage.setItem("habitacionTipo_reservacion", JSON.stringify(ahabitacionTipo));
-            // localStorage.setItem("fechaCheckIn_reservacion", JSON.stringify(afechaCheckIn));
-            // localStorage.setItem("fechaCheckOut_reservacion", JSON.stringify(afechaCheckOut));
-            // localStorage.setItem("codigo_reservacion", JSON.stringify(acodigo));
-            // localStorage.setItem("Huespedes", JSON.stringify(ahuespedes));
             var reservaActual = new areserva(codigo ,familia,habitacionTipo,fechaCheckIn,fechaCheckOut,ahuespedes);
             areservas.push(reservaActual);
             localStorage.setItem("areservas", JSON.stringify(areservas));
@@ -466,13 +374,7 @@
     //    var fechaInicio =JSON.parse(localStorage.getItem('fechaCheckIn'))
     //    var fechaFin =JSON.parse(localStorage.getItem('fechaCheckOut'))
 
-    //    function showItemsByKey() {
-    //     var typeofKey = null;
-    //     for (var key in localStorage) {
-    //         typeofKey = (typeof localStorage[codigo]);
-    //         console.log(key, typeofKey);
-    //         }
-    //     }
+    //   
 
     //    //for(var i in codigo[]) i== codigo; print()){
     //        var fila = document.createElement('tr');
@@ -483,12 +385,13 @@
     //        var celdaFechaInicio = document.createElement('td');
     //        var celdaFechaFin = document.createElement('td');
 
-    //        nodoTextoCodigo = document.createTextNode(codigo[i]),
-    //        nodoTextoTitular = document.createTextNode(titular[i]),
-    //        nodoTextoPlazas = document.createTextNode(plazas[i]),
-    //        nodoTextoFechaInicio = document.createTextNode(fechaInicio[i]),
-    //        nodoTextoFechaFin = document.createTextNode(fechaFin[i])
+    //        nodoTextoCodigo = document.createTextNode(areservasGuard[l].codigo),
+    //        nodoTextoTitular = document.createTextNode(areservasGuard[l].familia),
+    //        nodoTextoPlazas = document.createTextNode(areservasGuard[l].habitacionTipo),
+    //        nodoTextoFechaInicio = document.createTextNode(areservasGuard[l].fechaCheckIn),
+    //        nodoTextoFechaFin = document.createTextNode(areservasGuard[l].fechaCheckOut)
 
+    
     //         celdacodigo.appendChild(nodoTextoCodigo)
     //         celdaTitular.appendChild(nodoTextoTitular)
     //         celdaPlazas.appendChild(nodoTextoPlazas)
